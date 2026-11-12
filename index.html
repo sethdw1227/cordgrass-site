@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2296%22%20fill%3D%22%231f6f5c%22/%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f7f4ee%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%2226%22%3E%3Cpath%20d%3D%22M256%20420%20C%20250%20320%2C%20236%20220%2C%20190%20120%22/%3E%3Cpath%20d%3D%22M256%20420%20C%20262%20310%2C%20280%20200%2C%20340%2096%22/%3E%3Cpath%20d%3D%22M256%20420%20C%20256%20340%2C%20256%20250%2C%20262%20150%22%20stroke-width%3D%2222%22/%3E%3Cpath%20d%3D%22M256%20420%20C%20236%20360%2C%20200%20310%2C%20140%20270%22%20stroke-width%3D%2220%22/%3E%3Cpath%20d%3D%22M256%20420%20C%20280%20366%2C%20320%20320%2C%20384%20290%22%20stroke-width%3D%2220%22/%3E%3C/g%3E%3Cpath%20d%3D%22M120%20424%20H392%22%20stroke%3D%22%23f7f4ee%22%20stroke-width%3D%2218%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
 <meta name="description" content="MLS listing descriptions written from your facts, delivered by email. Cordgrass Studio, Hilton Head Island, SC.">
 <title>Cordgrass Studio</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
@@ -15,7 +16,7 @@ html { scroll-behavior: smooth }
 body { background: var(--bg); color: var(--ink); font: 400 17px/1.6 'Inter', system-ui, sans-serif; }
 .wrap { max-width: 980px; margin: 0 auto; padding-block: 28px 56px; padding-left: max(18px, env(safe-area-inset-left, 0px)); padding-right: max(18px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 52px; }
 header.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-.brand { font: 700 22px/1 'Fraunces', Georgia, serif; letter-spacing: .01em; } .brand span { color: var(--accent); }
+.brand { font: 700 22px/1 'Fraunces', Georgia, serif; letter-spacing: .01em; display: flex; align-items: center; gap: 10px; } .brand .mark { width: 34px; height: 34px; flex: none; } .brand span { color: var(--accent); }
 .tagline { font-size: 14px; color: var(--dim); }
 .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; }
 .hero > div { min-width: 0 }
@@ -50,7 +51,7 @@ footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; 
 </head>
 <body style="margin:0">
 <div class="wrap">
-  <header class="top"><div class="brand">Cordgrass <span>Studio</span></div><div class="tagline">MLS listing descriptions for agents and brokers</div></header>
+  <header class="top"><div class="brand"><svg class="mark" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="96" fill="#1f6f5c"/><g fill="none" stroke="#f7f4ee" stroke-linecap="round" stroke-width="26"><path d="M256 420 C 250 320, 236 220, 190 120"/><path d="M256 420 C 262 310, 280 200, 340 96"/><path d="M256 420 C 256 340, 256 250, 262 150" stroke-width="22"/><path d="M256 420 C 236 360, 200 310, 140 270" stroke-width="20"/><path d="M256 420 C 280 366, 320 320, 384 290" stroke-width="20"/></g><path d="M120 424 H392" stroke="#f7f4ee" stroke-width="18" stroke-linecap="round"/></svg>Cordgrass <span>Studio</span></div><div class="tagline">MLS listing descriptions for agents and brokers</div></header>
 
   <section class="hero">
     <div>
@@ -126,7 +127,7 @@ footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; 
     </ul>
   </section>
 
-  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>This page is a draft. Orders are not open yet.</div></footer>
+  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>Orders are not open yet.</div></footer>
 </div>
 
 </body>
