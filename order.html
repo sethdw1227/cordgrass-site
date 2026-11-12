@@ -132,6 +132,15 @@ optgroup { font-style: normal; font-weight: 700; }
         <label>Bedrooms and baths<input id="f-beds" name="beds_baths" placeholder="3 bed, 2.5 bath" maxlength="40"></label>
         <label>Size<input id="f-size" name="size" placeholder="2,100 sq ft" maxlength="40"></label>
       </div>
+      <div id="biz-row" hidden>
+        <label><span id="b1-l">Services you want written about</span> <small>The more specific, the less generic the writing.</small><input id="f-b1" maxlength="400"></label>
+        <label>What customers ask you most <small>Two or three questions. These become topics.</small><input id="f-b2" maxlength="400"></label>
+        <label>What sets you apart <small>Only what is true: years in business, licensed, insured, guarantees, how you work.</small><input id="f-b3" maxlength="400"></label>
+        <div class="row">
+          <label><span id="b4-l">Towns or areas you serve</span><input id="f-b4" maxlength="200"></label>
+          <label>Phone or contact line to use <small>Optional.</small><input id="f-b5" maxlength="120"></label>
+        </div>
+      </div>
       <label>The facts <small id="facts-hint">Features, updates with the year, views, community, anything you want mentioned. Leave out anything you do not want in the description.</small>
         <textarea id="f-facts" name="facts" maxlength="6000" required></textarea>
       </label>
@@ -174,7 +183,7 @@ optgroup { font-style: normal; font-weight: 700; }
   var form = $('order'), go = $('go'), err = $('err'), done = $('done'), pkg = $('f-pkg');
   var want = (location.search.match(/[?&]p=([a-z0-9]+)\b/) || [])[1];
   if (want && NAME[want]) pkg.value = want;
-  function shape() { var g = GROUP[pkg.value] || 'home'; $('prop-row').hidden = (g === 'product' || g === 'bio' || g === 'trade' || g === 'store'); $('limit-wrap').hidden = (g !== 'home'); $('facts-hint').textContent = HINT[g]; }
+  function shape() { var g = GROUP[pkg.value] || 'home'; $('prop-row').hidden = (g === 'product' || g === 'bio' || g === 'trade' || g === 'store'); $('limit-wrap').hidden = (g !== 'home'); $('facts-hint').textContent = HINT[g]; var biz = (g === 'trade' || g === 'store'); $('biz-row').hidden = !biz; $('b1-l').textContent = g === 'store' ? 'Products you want written about' : 'Services you want written about'; $('b4-l').textContent = g === 'store' ? 'Where you ship' : 'Towns or areas you serve'; }
   pkg.addEventListener('change', shape); shape();
   function label() { go.textContent = !OPEN ? 'Orders open soon' : (FREE[pkg.value] ? 'Send my free sample request' : PAY[pkg.value] ? 'Continue to payment' : 'Send my order'); }
   pkg.addEventListener('change', label);
@@ -224,6 +233,7 @@ optgroup { font-style: normal; font-weight: 700; }
     if (!OPEN || go.disabled) return;
     var d = { order_code: code(), package: pkg.value, name: val('f-name'), email: val('f-email'), property_type: val('f-type'), beds_baths: val('f-beds'),
       size: val('f-size'), mls_limit: val('f-limit'), requests: val('f-wish'), facts: val('f-facts') };
+    var gg = GROUP[pkg.value]; if (gg === 'trade' || gg === 'store') { var ex = [[gg === 'store' ? 'Products' : 'Services', 'f-b1'], ['Customers often ask', 'f-b2'], ['What sets us apart', 'f-b3'], [gg === 'store' ? 'Ships to' : 'Area served', 'f-b4'], ['Contact', 'f-b5']].filter(function (x) { return val(x[1]); }).map(function (x) { return x[0] + ': ' + val(x[1]); }).join('\n'); if (ex) d.facts = (ex + '\n' + d.facts).slice(0, 6000); }
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)) return fail('Please enter the email address the description should be sent to.');
     if (d.facts.length < 30) return fail('Please add the facts about the property. A few lines is enough.');
     if ($('f-bot').checked) return;
