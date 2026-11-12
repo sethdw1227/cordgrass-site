@@ -98,11 +98,14 @@ optgroup { font-style: normal; font-weight: 700; }
           </optgroup>
           <optgroup label="Vacation rentals">
           <option value="vacation">Vacation rental listing: title, summary, the space ($29)</option>
+          <option value="vacationfree">Free first vacation rental listing, one per host</option>
           </optgroup>
           <optgroup label="Online sellers">
           <option value="amazon">Amazon listing: title, highlights, 5 bullets, description ($29)</option>
           <option value="etsy">Etsy listing: title, 13 tags, description ($12)</option>
           <option value="etsy5">Five Etsy listings ($49). Send the first product now</option>
+          <option value="amazonfree">Free first Amazon listing, one per seller</option>
+          <option value="etsyfree">Free first Etsy listing, one per shop</option>
           </optgroup>
           <optgroup label="Agents">
           <option value="bio">Agent bio ($19)</option>
@@ -146,8 +149,9 @@ optgroup { font-style: normal; font-weight: 700; }
     long: 'https://buy.stripe.com/28E6oIewBd4g4I16c5eUU01',
     five: 'https://buy.stripe.com/fZu8wQewB5BO1vPcAteUU02'
   };
-  var NAME = { single: 'Standard ($10)', long: 'Long ($15)', five: 'Five-pack ($40)', sample: 'Free sample', rental: 'Rental listing ($10)', vacation: 'Vacation rental listing ($29)', amazon: 'Amazon listing ($29)', etsy: 'Etsy listing ($12)', etsy5: 'Etsy five-pack ($49)', bio: 'Agent bio ($19)' };
-  var GROUP = { single: 'home', long: 'home', five: 'home', sample: 'home', rental: 'home', vacation: 'stay', amazon: 'product', etsy: 'product', etsy5: 'product', bio: 'bio' };
+  var NAME = { single: 'Standard ($10)', long: 'Long ($15)', five: 'Five-pack ($40)', sample: 'Free sample', rental: 'Rental listing ($10)', vacation: 'Vacation rental listing ($29)', amazon: 'Amazon listing ($29)', etsy: 'Etsy listing ($12)', etsy5: 'Etsy five-pack ($49)', bio: 'Agent bio ($19)', vacationfree: 'Free sample, vacation rental', amazonfree: 'Free sample, Amazon', etsyfree: 'Free sample, Etsy' };
+  var FREE = { sample: 1, vacationfree: 1, amazonfree: 1, etsyfree: 1 };
+  var GROUP = { single: 'home', long: 'home', five: 'home', sample: 'home', rental: 'home', vacation: 'stay', amazon: 'product', etsy: 'product', etsy5: 'product', bio: 'bio', vacationfree: 'stay', amazonfree: 'product', etsyfree: 'product' };
   var HINT = {
     home: 'Features, updates with the year, views, community, anything you want mentioned. Leave out anything you do not want in the description.',
     stay: 'How many guests it sleeps and the beds, features indoors and outdoors, the view, and any distances you want mentioned. Leave out anything you do not want in the listing.',
@@ -159,7 +163,7 @@ optgroup { font-style: normal; font-weight: 700; }
   if (want && NAME[want]) pkg.value = want;
   function shape() { var g = GROUP[pkg.value] || 'home'; $('prop-row').hidden = (g === 'product' || g === 'bio'); $('limit-wrap').hidden = (g !== 'home'); $('facts-hint').textContent = HINT[g]; }
   pkg.addEventListener('change', shape); shape();
-  function label() { go.textContent = !OPEN ? 'Orders open soon' : (pkg.value === 'sample' ? 'Send my free sample request' : PAY[pkg.value] ? 'Continue to payment' : 'Send my order'); }
+  function label() { go.textContent = !OPEN ? 'Orders open soon' : (FREE[pkg.value] ? 'Send my free sample request' : PAY[pkg.value] ? 'Continue to payment' : 'Send my order'); }
   pkg.addEventListener('change', label);
   if (OPEN) { go.disabled = false; $('state').hidden = true; }
   label();
@@ -191,7 +195,7 @@ optgroup { font-style: normal; font-weight: 700; }
       return;
     }
     done.appendChild(el('h2', 'One more step'));
-    done.appendChild(el('p', 'Copy the details below and email them to ' + MAIL + '.' + (d.package === 'sample' ? '' : PAY[d.package] ? ' Then pay with the button underneath.' : ' A secure payment link will be emailed back to you.')));
+    done.appendChild(el('p', 'Copy the details below and email them to ' + MAIL + '.' + (FREE[d.package] ? '' : PAY[d.package] ? ' Then pay with the button underneath.' : ' A secure payment link will be emailed back to you.')));
     var pre = el('pre', summary(d), 'copy'); done.appendChild(pre);
     var cp = el('button', 'Copy details', 'btn'); cp.type = 'button';
     cp.addEventListener('click', function () {
@@ -200,7 +204,7 @@ optgroup { font-style: normal; font-weight: 700; }
       try { navigator.clipboard.writeText(pre.textContent).then(ok, sel); } catch (e) { sel(); }
     });
     done.appendChild(cp);
-    if (d.package !== 'sample' && PAY[d.package]) { var b = el('a', 'Go to payment', 'btn'); b.href = payUrl(d.package, d.order_code); done.appendChild(b); }
+    if (!FREE[d.package] && PAY[d.package]) { var b = el('a', 'Go to payment', 'btn'); b.href = payUrl(d.package, d.order_code); done.appendChild(b); }
   }
   form.addEventListener('submit', function (ev) {
     ev.preventDefault(); err.hidden = true;
@@ -218,7 +222,7 @@ optgroup { font-style: normal; font-weight: 700; }
       .then(function (r) { return r.json(); })
       .then(function (j) {
         if (!j || !j.success) throw new Error('not sent');
-        if (d.package === 'sample') return showDone('sent-free', d);
+        if (FREE[d.package]) return showDone('sent-free', d);
         if (!PAY[d.package]) return showDone('sent-nolink', d);
         showDone('sent-paid', d);
         setTimeout(function () { location.href = payUrl(d.package, d.order_code); }, 1200);
