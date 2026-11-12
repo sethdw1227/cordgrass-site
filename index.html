@@ -103,7 +103,7 @@ footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; 
       <div class="plan"><p class="k">Long</p><div class="price">$15</div><h3>Up to 2,000 characters</h3><ul><li>For websites and larger properties</li><li>Delivered within 2 days</li><li>One round of changes</li></ul><a class="btn" aria-disabled="true" data-order="long">Orders open soon</a></div>
       <div class="plan"><p class="k">First one</p><div class="price">Free</div><h3>One sample</h3><p>Agents and brokers: one description for a current listing, free, so you can judge the work before paying for anything.</p><a class="btn" aria-disabled="true" data-order="sample">Opens soon</a></div>
     </div>
-    <p class="bulk">List often? Five standard descriptions for $40, used as your listings come in.</p>
+    <p class="bulk">List often? <a class="link" data-order="five">Five standard descriptions for $40</a>, used as your listings come in.</p>
   </section>
 
   <section>
@@ -127,8 +127,28 @@ footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; 
     </ul>
   </section>
 
-  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>Orders are not open yet.</div></footer>
+  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div><span id="open-note">Orders are not open yet.</span></div></footer>
 </div>
 
+
+<script>
+/* Orders switch. Set OPEN to true on launch day and upload this file again. Nothing else changes. */
+(function () {
+  var OPEN = false;
+  var LINKS = {
+    single: 'https://buy.stripe.com/8x25kE2NT9S4gqJ2ZTeUU00',
+    long: 'https://buy.stripe.com/28E6oIewBd4g4I16c5eUU01',
+    five: 'https://buy.stripe.com/fZu8wQewB5BO1vPcAteUU02'
+  };
+  var LABEL = { single: 'Order for $10', long: 'Order for $15', five: null };
+  if (!OPEN) return;
+  Array.prototype.forEach.call(document.querySelectorAll('[data-order]'), function (a) {
+    var k = a.getAttribute('data-order'); if (!LINKS[k]) return;
+    a.setAttribute('href', LINKS[k]); a.removeAttribute('aria-disabled');
+    if (LABEL[k]) a.textContent = LABEL[k];
+  });
+  var foot = document.getElementById('open-note'); if (foot) foot.textContent = 'Orders are open.';
+})();
+</script>
 </body>
 </html>
