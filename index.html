@@ -45,7 +45,7 @@ h3 { margin: 0; font: 700 19px/1.2 'Inter'; } .step p, .plan p, .aud p { margin:
 .faq summary { cursor: pointer; font: 600 17px/1.35 'Inter'; padding: 16px 0; list-style-position: outside; }
 .faq details p { margin: 0 0 16px; color: var(--dim); max-width: 44em; }
 .promise { background: var(--soft); border-radius: 16px; padding: 22px 24px; } .promise ul { margin: 8px 0 0; padding-left: 22px; } .promise li { margin: 4px 0; }
-footer a.mail { color: inherit; }
+footer a { color: inherit; }
 footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; color: var(--dim); display: flex; flex-direction: column; gap: 6px; }
 @media (max-width: 760px) { .hero { grid-template-columns: 1fr; } .steps, .plans, .who, .samples { grid-template-columns: 1fr; } }
 </style>
@@ -128,21 +128,21 @@ footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; 
     </ul>
   </section>
 
-  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>Questions: <a class="mail" href="mailto:hello@cordgrassstudio.com">hello@cordgrassstudio.com</a></div><div><span id="open-note">Orders are not open yet.</span></div></footer>
+  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>Questions: <a class="mail" href="mailto:hello@cordgrassstudio.com">hello@cordgrassstudio.com</a></div><div><a href="markets.html">Markets</a> · <a href="partners.html">Partners</a> · <a href="order.html">Order</a></div><div><span id="open-note">Orders are not open yet.</span></div></footer>
 </div>
 
 
 <script>
-/* Orders switch. Set OPEN to true on launch day and upload this file again. Nothing else changes. */
+/* Orders switch. Set OPEN to true here and in order.html on launch day and upload both files again. The Stripe links live in order.html. */
 (function () {
   var OPEN = false;
   var LINKS = {
-    single: 'https://buy.stripe.com/8x25kE2NT9S4gqJ2ZTeUU00',
-    long: 'https://buy.stripe.com/28E6oIewBd4g4I16c5eUU01',
-    five: 'https://buy.stripe.com/fZu8wQewB5BO1vPcAteUU02',
-    sample: 'mailto:hello@cordgrassstudio.com?subject=Free%20sample%20description'
+    single: 'order.html?p=single',
+    long: 'order.html?p=long',
+    five: 'order.html?p=five',
+    sample: 'order.html?p=sample'
   };
-  var LABEL = { single: 'Order for $10', long: 'Order for $15', five: null, sample: 'Email for your free sample' };
+  var LABEL = { single: 'Order for $10', long: 'Order for $15', five: null, sample: 'Ask for your free sample' };
   if (!OPEN) return;
   Array.prototype.forEach.call(document.querySelectorAll('[data-order]'), function (a) {
     var k = a.getAttribute('data-order'); if (!LINKS[k]) return;
