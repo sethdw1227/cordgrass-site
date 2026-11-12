@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2296%22%20fill%3D%22%231f6f5c%22/%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f7f4ee%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%2226%22%3E%3Cpath%20d%3D%22M256%20420%20C%20250%20320%2C%20236%20220%2C%20190%20120%22/%3E%3Cpath%20d%3D%22M256%20420%20C%20262%20310%2C%20280%20200%2C%20340%2096%22/%3E%3Cpath%20d%3D%22M256%20420%20C%20256%20340%2C%20256%20250%2C%20262%20150%22%20stroke-width%3D%2222%22/%3E%3Cpath%20d%3D%22M256%20420%20C%20236%20360%2C%20200%20310%2C%20140%20270%22%20stroke-width%3D%2220%22/%3E%3Cpath%20d%3D%22M256%20420%20C%20280%20366%2C%20320%20320%2C%20384%20290%22%20stroke-width%3D%2220%22/%3E%3C/g%3E%3Cpath%20d%3D%22M120%20424%20H392%22%20stroke%3D%22%23f7f4ee%22%20stroke-width%3D%2218%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
-<meta name="description" content="Send the facts about a property and get an MLS listing description by email. $10 standard, $15 long, first one free for agents.">
-<title>Order a listing description | Cordgrass Studio</title>
+<meta name="description" content="Send your facts and get the finished writing by email: listing descriptions, vacation rental listings, Amazon and Etsy listings, agent bios.">
+<title>Start an order | Cordgrass Studio</title>
 <link rel="canonical" href="https://cordgrassstudio.com/order">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
 <style>
@@ -47,6 +47,8 @@ h3 { margin: 0; font: 700 19px/1.2 'Inter'; } .step p, .plan p, .aud p { margin:
 .faq details p { margin: 0 0 16px; color: var(--dim); max-width: 44em; }
 .promise { background: var(--soft); border-radius: 16px; padding: 22px 24px; } .promise ul { margin: 8px 0 0; padding-left: 22px; } .promise li { margin: 4px 0; }
 footer a { color: inherit; }
+.grid-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; list-style: none; margin: 0; padding: 0; } .grid-links a { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; color: var(--ink); text-decoration: none; font-weight: 600; } .grid-links a:hover { border-color: var(--accent); }
+@media (max-width: 760px) { .grid-links { grid-template-columns: 1fr; } }
 footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; color: var(--dim); display: flex; flex-direction: column; gap: 6px; }
 @media (max-width: 760px) { .hero { grid-template-columns: 1fr; } .steps, .plans, .who, .samples { grid-template-columns: 1fr; } }
 
@@ -72,39 +74,56 @@ button.btn { cursor: pointer; font-size: 17px; padding: 16px 18px; } button.btn[
 pre.copy { white-space: pre-wrap; word-break: break-word; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 14px; font: 400 14px/1.5 ui-monospace, Menlo, Consolas, monospace; margin: 0; max-height: 320px; overflow: auto; }
 .done { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 14px; }
 footer a { color: inherit; }
-@media (max-width: 760px) { .two, .row, .row.three { grid-template-columns: 1fr; } .grid-links { grid-template-columns: 1fr; } }
+.out .lb { display: block; font: 700 11px/1 'Inter'; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin: 12px 0 4px; } .out .lb:first-child { margin-top: 0; } .out.small { font-size: 16px; }
+.svc-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } .svc-cards .plan .price { font-size: 32px; }
+optgroup { font-style: normal; font-weight: 700; }
+@media (max-width: 760px) { .two, .row, .row.three { grid-template-columns: 1fr; } .grid-links, .svc-cards { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body style="margin:0">
 <div class="wrap page">
-  <header class="top"><div class="brand"><a href="index.html"><svg class="mark" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="96" fill="#1f6f5c"/><g fill="none" stroke="#f7f4ee" stroke-linecap="round" stroke-width="26"><path d="M256 420 C 250 320, 236 220, 190 120"/><path d="M256 420 C 262 310, 280 200, 340 96"/><path d="M256 420 C 256 340, 256 250, 262 150" stroke-width="22"/><path d="M256 420 C 236 360, 200 310, 140 270" stroke-width="20"/><path d="M256 420 C 280 366, 320 320, 384 290" stroke-width="20"/></g><path d="M120 424 H392" stroke="#f7f4ee" stroke-width="18" stroke-linecap="round"/></svg>Cordgrass <span>Studio</span></a></div><nav class="links" aria-label="Site"><a href="index.html#samples">Samples</a><a href="markets.html">Markets</a><a href="partners.html">Partners</a><a href="order.html">Order</a></nav></header>
+  <header class="top"><div class="brand"><a href="index.html"><svg class="mark" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="96" fill="#1f6f5c"/><g fill="none" stroke="#f7f4ee" stroke-linecap="round" stroke-width="26"><path d="M256 420 C 250 320, 236 220, 190 120"/><path d="M256 420 C 262 310, 280 200, 340 96"/><path d="M256 420 C 256 340, 256 250, 262 150" stroke-width="22"/><path d="M256 420 C 236 360, 200 310, 140 270" stroke-width="20"/><path d="M256 420 C 280 366, 320 320, 384 290" stroke-width="20"/></g><path d="M120 424 H392" stroke="#f7f4ee" stroke-width="18" stroke-linecap="round"/></svg>Cordgrass <span>Studio</span></a></div><nav class="links" aria-label="Site"><a href="services.html">Services</a><a href="index.html#samples">Samples</a><a href="markets.html">Markets</a><a href="partners.html">Partners</a><a href="order.html">Order</a></nav></header>
 
-  <section class="narrow"><h1>Order a listing description</h1><p class="lead">Fill in what you know. Bullet points and rough notes are fine. Only the facts you type are used.</p><p class="notice" id="state">Orders are not open yet. You can see below what we ask for.</p></section>
+  <section class="narrow"><h1>Start an order</h1><p class="lead">Fill in what you know. Bullet points and rough notes are fine. Only the facts you type are used.</p><p class="notice" id="state">Orders are not open yet. You can see below what we ask for.</p></section>
   <section>
     <form class="order" id="order" novalidate>
       <label>What would you like?
         <select id="f-pkg" name="package">
-          <option value="single">Standard description, up to 1,000 characters ($10)</option>
-          <option value="long">Long description, up to 2,000 characters ($15)</option>
-          <option value="five">Five standard descriptions ($40). Send the first property now</option>
+          <optgroup label="Listing descriptions">
+          <option value="single">MLS listing description, up to 1,000 characters ($10)</option>
+          <option value="long">Long listing description, up to 2,000 characters ($15)</option>
+          <option value="five">Five listing descriptions ($40). Send the first property now</option>
+          <option value="rental">Rental listing description ($10)</option>
           <option value="sample">Free sample, one per agent, for a current listing</option>
+          </optgroup>
+          <optgroup label="Vacation rentals">
+          <option value="vacation">Vacation rental listing: title, summary, the space ($29)</option>
+          </optgroup>
+          <optgroup label="Online sellers">
+          <option value="amazon">Amazon listing: title, highlights, 5 bullets, description ($29)</option>
+          <option value="etsy">Etsy listing: title, 13 tags, description ($12)</option>
+          <option value="etsy5">Five Etsy listings ($49). Send the first product now</option>
+          </optgroup>
+          <optgroup label="Agents">
+          <option value="bio">Agent bio ($19)</option>
+          </optgroup>
         </select>
       </label>
       <div class="row">
         <label>Your name<input id="f-name" name="name" autocomplete="name" maxlength="80"></label>
         <label>Email to send it to<input id="f-email" name="email" type="email" autocomplete="email" maxlength="120" required></label>
       </div>
-      <div class="row three">
+      <div class="row three" id="prop-row">
         <label>Property type<input id="f-type" name="property_type" placeholder="House, condo, villa, land" maxlength="60"></label>
         <label>Bedrooms and baths<input id="f-beds" name="beds_baths" placeholder="3 bed, 2.5 bath" maxlength="40"></label>
         <label>Size<input id="f-size" name="size" placeholder="2,100 sq ft" maxlength="40"></label>
       </div>
-      <label>The facts <small>Features, updates with the year, views, community, anything you want mentioned. Leave out anything you do not want in the description.</small>
+      <label>The facts <small id="facts-hint">Features, updates with the year, views, community, anything you want mentioned. Leave out anything you do not want in the description.</small>
         <textarea id="f-facts" name="facts" maxlength="6000" required></textarea>
       </label>
       <div class="row">
         <label>Requests <small>Optional. Tone, what to lead with, what to leave out.</small><input id="f-wish" name="requests" maxlength="300"></label>
-        <label>MLS character limit <small>Optional.</small><input id="f-limit" name="mls_limit" inputmode="numeric" maxlength="6" placeholder="1000"></label>
+ <label id="limit-wrap">MLS character limit <small>Optional.</small><input id="f-limit" name="mls_limit" inputmode="numeric" maxlength="6" placeholder="1000"></label>
       </div>
       <div class="hp" aria-hidden="true"><label>Leave this empty<input type="checkbox" id="f-bot" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
       <p class="notice bad" id="err" hidden></p>
@@ -113,7 +132,7 @@ footer a { color: inherit; }
     </form>
     <div class="done" id="done" hidden></div>
   </section>
-  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>Questions: <a href="mailto:hello@cordgrassstudio.com">hello@cordgrassstudio.com</a></div><div><a href="index.html">Home</a> · <a href="markets.html">Markets</a> · <a href="partners.html">Partners</a> · <a href="order.html">Order</a></div></footer>
+  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>Questions: <a href="mailto:hello@cordgrassstudio.com">hello@cordgrassstudio.com</a></div><div><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="markets.html">Markets</a> · <a href="partners.html">Partners</a> · <a href="order.html">Order</a></div></footer>
 </div>
 <script>
 /* Order page switch. OPEN turns the form on. FORM_KEY is the Web3Forms access key that emails each order to the studio.
@@ -127,12 +146,20 @@ footer a { color: inherit; }
     long: 'https://buy.stripe.com/28E6oIewBd4g4I16c5eUU01',
     five: 'https://buy.stripe.com/fZu8wQewB5BO1vPcAteUU02'
   };
-  var NAME = { single: 'Standard ($10)', long: 'Long ($15)', five: 'Five-pack ($40)', sample: 'Free sample' };
+  var NAME = { single: 'Standard ($10)', long: 'Long ($15)', five: 'Five-pack ($40)', sample: 'Free sample', rental: 'Rental listing ($10)', vacation: 'Vacation rental listing ($29)', amazon: 'Amazon listing ($29)', etsy: 'Etsy listing ($12)', etsy5: 'Etsy five-pack ($49)', bio: 'Agent bio ($19)' };
+  var GROUP = { single: 'home', long: 'home', five: 'home', sample: 'home', rental: 'home', vacation: 'stay', amazon: 'product', etsy: 'product', etsy5: 'product', bio: 'bio' };
+  var HINT = {
+    home: 'Features, updates with the year, views, community, anything you want mentioned. Leave out anything you do not want in the description.',
+    stay: 'How many guests it sleeps and the beds, features indoors and outdoors, the view, and any distances you want mentioned. Leave out anything you do not want in the listing.',
+    product: 'What the product is, what it is made of, size and colour, what the buyer receives, and who makes it. Only claims you can support.',
+    bio: 'Name, brokerage, area served, when you were licensed, what you focus on, and anything personal you want included. Only awards and numbers you can support.' };
   var $ = function (id) { return document.getElementById(id); };
   var form = $('order'), go = $('go'), err = $('err'), done = $('done'), pkg = $('f-pkg');
-  var want = (location.search.match(/[?&]p=(single|long|five|sample)\b/) || [])[1];
-  if (want) pkg.value = want;
-  function label() { go.textContent = !OPEN ? 'Orders open soon' : (pkg.value === 'sample' ? 'Send my free sample request' : 'Continue to payment'); }
+  var want = (location.search.match(/[?&]p=([a-z0-9]+)\b/) || [])[1];
+  if (want && NAME[want]) pkg.value = want;
+  function shape() { var g = GROUP[pkg.value] || 'home'; $('prop-row').hidden = (g === 'product' || g === 'bio'); $('limit-wrap').hidden = (g !== 'home'); $('facts-hint').textContent = HINT[g]; }
+  pkg.addEventListener('change', shape); shape();
+  function label() { go.textContent = !OPEN ? 'Orders open soon' : (pkg.value === 'sample' ? 'Send my free sample request' : PAY[pkg.value] ? 'Continue to payment' : 'Send my order'); }
   pkg.addEventListener('change', label);
   if (OPEN) { go.disabled = false; $('state').hidden = true; }
   label();
@@ -152,6 +179,11 @@ footer a { color: inherit; }
       done.appendChild(el('p', 'Your free sample will be emailed to ' + d.email + ' by the end of the next day. Your reference is ' + d.order_code + '.'));
       return;
     }
+    if (kind === 'sent-nolink') {
+      done.appendChild(el('h2', 'Got it. Thank you.'));
+      done.appendChild(el('p', 'Your details are in. A secure payment link will be emailed to ' + d.email + ', and the work starts as soon as it is paid. Your reference is ' + d.order_code + '.'));
+      return;
+    }
     if (kind === 'sent-paid') {
       done.appendChild(el('h2', 'Details received. Taking you to payment.'));
       done.appendChild(el('p', 'Your reference is ' + d.order_code + '. If the payment page does not open, use the button below.'));
@@ -159,7 +191,7 @@ footer a { color: inherit; }
       return;
     }
     done.appendChild(el('h2', 'One more step'));
-    done.appendChild(el('p', 'Copy the details below and email them to ' + MAIL + '.' + (d.package === 'sample' ? '' : ' Then pay with the button underneath.')));
+    done.appendChild(el('p', 'Copy the details below and email them to ' + MAIL + '.' + (d.package === 'sample' ? '' : PAY[d.package] ? ' Then pay with the button underneath.' : ' A secure payment link will be emailed back to you.')));
     var pre = el('pre', summary(d), 'copy'); done.appendChild(pre);
     var cp = el('button', 'Copy details', 'btn'); cp.type = 'button';
     cp.addEventListener('click', function () {
@@ -168,7 +200,7 @@ footer a { color: inherit; }
       try { navigator.clipboard.writeText(pre.textContent).then(ok, sel); } catch (e) { sel(); }
     });
     done.appendChild(cp);
-    if (d.package !== 'sample') { var b = el('a', 'Go to payment', 'btn'); b.href = payUrl(d.package, d.order_code); done.appendChild(b); }
+    if (d.package !== 'sample' && PAY[d.package]) { var b = el('a', 'Go to payment', 'btn'); b.href = payUrl(d.package, d.order_code); done.appendChild(b); }
   }
   form.addEventListener('submit', function (ev) {
     ev.preventDefault(); err.hidden = true;
@@ -187,6 +219,7 @@ footer a { color: inherit; }
       .then(function (j) {
         if (!j || !j.success) throw new Error('not sent');
         if (d.package === 'sample') return showDone('sent-free', d);
+        if (!PAY[d.package]) return showDone('sent-nolink', d);
         showDone('sent-paid', d);
         setTimeout(function () { location.href = payUrl(d.package, d.order_code); }, 1200);
       })

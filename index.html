@@ -46,6 +46,8 @@ h3 { margin: 0; font: 700 19px/1.2 'Inter'; } .step p, .plan p, .aud p { margin:
 .faq details p { margin: 0 0 16px; color: var(--dim); max-width: 44em; }
 .promise { background: var(--soft); border-radius: 16px; padding: 22px 24px; } .promise ul { margin: 8px 0 0; padding-left: 22px; } .promise li { margin: 4px 0; }
 footer a { color: inherit; }
+.grid-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; list-style: none; margin: 0; padding: 0; } .grid-links a { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; color: var(--ink); text-decoration: none; font-weight: 600; } .grid-links a:hover { border-color: var(--accent); }
+@media (max-width: 760px) { .grid-links { grid-template-columns: 1fr; } }
 footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; color: var(--dim); display: flex; flex-direction: column; gap: 6px; }
 @media (max-width: 760px) { .hero { grid-template-columns: 1fr; } .steps, .plans, .who, .samples { grid-template-columns: 1fr; } }
 </style>
@@ -77,6 +79,11 @@ footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; 
       <div class="aud"><h3>Investors and landlords</h3><p>Every listing written the same clear way, whether it is one property or twenty.</p></div>
       <div class="aud"><h3>Owners selling their own home</h3><p>You know the house. We turn what you know into a listing that reads well.</p></div>
     </div>
+  </section>
+
+  <section>
+    <h2>More from the studio</h2><p class="sub">The same way of working, for other kinds of listings. You send the facts, and nothing is added.</p>
+    <ul class="grid-links"><li><a href="vacation-rental-listings.html">Vacation rental listings</a></li><li><a href="rental-listings.html">Rental listings</a></li><li><a href="agent-bios.html">Agent bios</a></li><li><a href="amazon-listings.html">Amazon listings</a></li><li><a href="etsy-listings.html">Etsy listings</a></li><li><a href="services.html">All services and prices</a></li></ul>
   </section>
 
   <section id="samples">
@@ -128,7 +135,7 @@ footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; 
     </ul>
   </section>
 
-  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>Questions: <a class="mail" href="mailto:hello@cordgrassstudio.com">hello@cordgrassstudio.com</a></div><div><a href="markets.html">Markets</a> · <a href="partners.html">Partners</a> · <a href="order.html">Order</a></div><div><span id="open-note">Orders are not open yet.</span></div></footer>
+  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>Questions: <a class="mail" href="mailto:hello@cordgrassstudio.com">hello@cordgrassstudio.com</a></div><div><a href="services.html">Services</a> · <a href="markets.html">Markets</a> · <a href="partners.html">Partners</a> · <a href="order.html">Order</a></div><div><span id="open-note">Orders are not open yet.</span></div></footer>
 </div>
 
 
