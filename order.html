@@ -107,6 +107,11 @@ optgroup { font-style: normal; font-weight: 700; }
           <option value="amazonfree">Free first Amazon listing, one per seller</option>
           <option value="etsyfree">Free first Etsy listing, one per shop</option>
           </optgroup>
+          <optgroup label="Online stores: email">
+          <option value="emailplan">Email plan: 8 marketing emails a month ($349 a month)</option>
+          <option value="storeemail">One marketing email ($49)</option>
+          <option value="emailfree">Free first email, one per store</option>
+          </optgroup>
           <optgroup label="Agents">
           <option value="bio">Agent bio ($19)</option>
           </optgroup>
@@ -155,20 +160,21 @@ optgroup { font-style: normal; font-weight: 700; }
     long: 'https://buy.stripe.com/28E6oIewBd4g4I16c5eUU01',
     five: 'https://buy.stripe.com/fZu8wQewB5BO1vPcAteUU02'
   };
-  var NAME = { single: 'Standard ($10)', long: 'Long ($15)', five: 'Five-pack ($40)', sample: 'Free sample', rental: 'Rental listing ($10)', vacation: 'Vacation rental listing ($29)', amazon: 'Amazon listing ($29)', etsy: 'Etsy listing ($12)', etsy5: 'Etsy five-pack ($49)', bio: 'Agent bio ($19)', vacationfree: 'Free sample, vacation rental', amazonfree: 'Free sample, Amazon', etsyfree: 'Free sample, Etsy', tradeplan: 'Trades monthly plan ($149 a month)', tradepost: 'Trade blog post ($39)', tradefree: 'Free first post, trades', agencyplan: 'Agency plan, one client ($99 a month)' };
-  var FREE = { sample: 1, vacationfree: 1, amazonfree: 1, etsyfree: 1, tradefree: 1 };
-  var GROUP = { single: 'home', long: 'home', five: 'home', sample: 'home', rental: 'home', vacation: 'stay', amazon: 'product', etsy: 'product', etsy5: 'product', bio: 'bio', vacationfree: 'stay', amazonfree: 'product', etsyfree: 'product', tradeplan: 'trade', tradepost: 'trade', tradefree: 'trade', agencyplan: 'trade' };
+  var NAME = { single: 'Standard ($10)', long: 'Long ($15)', five: 'Five-pack ($40)', sample: 'Free sample', rental: 'Rental listing ($10)', vacation: 'Vacation rental listing ($29)', amazon: 'Amazon listing ($29)', etsy: 'Etsy listing ($12)', etsy5: 'Etsy five-pack ($49)', bio: 'Agent bio ($19)', vacationfree: 'Free sample, vacation rental', amazonfree: 'Free sample, Amazon', etsyfree: 'Free sample, Etsy', tradeplan: 'Trades monthly plan ($149 a month)', tradepost: 'Trade blog post ($39)', tradefree: 'Free first post, trades', agencyplan: 'Agency plan, one client ($99 a month)', emailplan: 'Store email plan ($349 a month)', storeemail: 'Store email ($49)', emailfree: 'Free first email, stores' };
+  var FREE = { sample: 1, vacationfree: 1, amazonfree: 1, etsyfree: 1, tradefree: 1, emailfree: 1 };
+  var GROUP = { single: 'home', long: 'home', five: 'home', sample: 'home', rental: 'home', vacation: 'stay', amazon: 'product', etsy: 'product', etsy5: 'product', bio: 'bio', vacationfree: 'stay', amazonfree: 'product', etsyfree: 'product', tradeplan: 'trade', tradepost: 'trade', tradefree: 'trade', agencyplan: 'trade', emailplan: 'store', storeemail: 'store', emailfree: 'store' };
   var HINT = {
     home: 'Features, updates with the year, views, community, anything you want mentioned. Leave out anything you do not want in the description.',
     stay: 'How many guests it sleeps and the beds, features indoors and outdoors, the view, and any distances you want mentioned. Leave out anything you do not want in the listing.',
     product: 'What the product is, what it is made of, size and colour, what the buyer receives, and who makes it. Only claims you can support.',
+    store: 'Store name, what you sell, and the products you want mentioned with their materials, sizes and prices. Add any offer exactly as it should read, with its code and end date. Nothing is announced that you did not send. Add a topic if you have one in mind.',
     trade: 'Business name, trade, the town or area you serve, the services you want mentioned, and the phone number to use. Say licensed, insured, free estimates or 24-hour service only if they are true for you. Add a topic if you have one in mind.',
     bio: 'Name, brokerage, area served, when you were licensed, what you focus on, and anything personal you want included. Only awards and numbers you can support.' };
   var $ = function (id) { return document.getElementById(id); };
   var form = $('order'), go = $('go'), err = $('err'), done = $('done'), pkg = $('f-pkg');
   var want = (location.search.match(/[?&]p=([a-z0-9]+)\b/) || [])[1];
   if (want && NAME[want]) pkg.value = want;
-  function shape() { var g = GROUP[pkg.value] || 'home'; $('prop-row').hidden = (g === 'product' || g === 'bio' || g === 'trade'); $('limit-wrap').hidden = (g !== 'home'); $('facts-hint').textContent = HINT[g]; }
+  function shape() { var g = GROUP[pkg.value] || 'home'; $('prop-row').hidden = (g === 'product' || g === 'bio' || g === 'trade' || g === 'store'); $('limit-wrap').hidden = (g !== 'home'); $('facts-hint').textContent = HINT[g]; }
   pkg.addEventListener('change', shape); shape();
   function label() { go.textContent = !OPEN ? 'Orders open soon' : (FREE[pkg.value] ? 'Send my free sample request' : PAY[pkg.value] ? 'Continue to payment' : 'Send my order'); }
   pkg.addEventListener('change', label);
