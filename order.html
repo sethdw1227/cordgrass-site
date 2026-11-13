@@ -109,6 +109,7 @@ optgroup { font-style: normal; font-weight: 700; }
           </optgroup>
           <optgroup label="Online stores: email">
           <option value="emailplan">Email plan: 8 marketing emails a month ($349 a month)</option>
+          <option value="emailplan3">Email plan, three months paid up front ($899, saves $148)</option>
           <option value="storeemail">One marketing email ($49)</option>
           <option value="emailfree">Free first email, one per store</option>
           </optgroup>
@@ -117,6 +118,8 @@ optgroup { font-style: normal; font-weight: 700; }
           </optgroup>
           <optgroup label="Local trades">
           <option value="tradeplan">Monthly plan: 2 blog posts, 4 Google posts, review replies ($149 a month)</option>
+          <option value="tradeplan3">Monthly plan, three months paid up front ($399, saves $48)</option>
+          <option value="tradepack">Starter pack: 12 blog posts and 12 Google posts, one payment ($499)</option>
           <option value="tradepost">One blog post for your trade business ($39)</option>
           <option value="tradefree">Free first blog post, one per business</option>
           <option value="agencyplan">Agencies: the monthly set for one of your clients ($99 a month per client)</option>
@@ -178,11 +181,14 @@ optgroup { font-style: normal; font-weight: 700; }
     storeemail: 'https://buy.stripe.com/6oU00k6057JW1vPbwpeUU09',
     tradeplan: 'https://buy.stripe.com/eVqbJ29ch8O0eiBasleUU0b',
     agencyplan: 'https://buy.stripe.com/4gMbJ20FL3tG0rLcAteUU0c',
-    emailplan: 'https://buy.stripe.com/8x2bJ2749aW88Yh6c5eUU0d'
+    emailplan: 'https://buy.stripe.com/8x2bJ2749aW88Yh6c5eUU0d',
+    tradepack: 'https://buy.stripe.com/5kQ3cw2NT6FS4I11VPeUU0f',
+    tradeplan3: 'https://buy.stripe.com/8x2dRa7495BO5M5581eUU0g',
+    emailplan3: 'https://buy.stripe.com/eVq4gA3RX4xK2zTfMFeUU0h'
   };
-  var NAME = { single: 'Standard ($10)', long: 'Long ($15)', five: 'Five-pack ($40)', sample: 'Free sample', rental: 'Rental listing ($10)', vacation: 'Vacation rental listing ($29)', amazon: 'Amazon listing ($29)', etsy: 'Etsy listing ($12)', etsy5: 'Etsy five-pack ($49)', bio: 'Agent bio ($19)', vacationfree: 'Free sample, vacation rental', amazonfree: 'Free sample, Amazon', etsyfree: 'Free sample, Etsy', tradeplan: 'Trades monthly plan ($149 a month)', tradepost: 'Trade blog post ($39)', tradefree: 'Free first post, trades', agencyplan: 'Agency plan, one client ($99 a month)', emailplan: 'Store email plan ($349 a month)', storeemail: 'Store email ($49)', emailfree: 'Free first email, stores' };
+  var NAME = { single: 'Standard ($10)', long: 'Long ($15)', five: 'Five-pack ($40)', sample: 'Free sample', rental: 'Rental listing ($10)', vacation: 'Vacation rental listing ($29)', amazon: 'Amazon listing ($29)', etsy: 'Etsy listing ($12)', etsy5: 'Etsy five-pack ($49)', bio: 'Agent bio ($19)', vacationfree: 'Free sample, vacation rental', amazonfree: 'Free sample, Amazon', etsyfree: 'Free sample, Etsy', tradeplan: 'Trades monthly plan ($149 a month)', tradepost: 'Trade blog post ($39)', tradefree: 'Free first post, trades', agencyplan: 'Agency plan, one client ($99 a month)', emailplan: 'Store email plan ($349 a month)', storeemail: 'Store email ($49)', emailfree: 'Free first email, stores', tradepack: 'Trades starter pack ($499, one payment)', tradeplan3: 'Trades plan, three months ($399)', emailplan3: 'Store email plan, three months ($899)' };
   var FREE = { sample: 1, vacationfree: 1, amazonfree: 1, etsyfree: 1, tradefree: 1, emailfree: 1 };
-  var GROUP = { single: 'home', long: 'home', five: 'home', sample: 'home', rental: 'home', vacation: 'stay', amazon: 'product', etsy: 'product', etsy5: 'product', bio: 'bio', vacationfree: 'stay', amazonfree: 'product', etsyfree: 'product', tradeplan: 'trade', tradepost: 'trade', tradefree: 'trade', agencyplan: 'trade', emailplan: 'store', storeemail: 'store', emailfree: 'store' };
+  var GROUP = { single: 'home', long: 'home', five: 'home', sample: 'home', rental: 'home', vacation: 'stay', amazon: 'product', etsy: 'product', etsy5: 'product', bio: 'bio', vacationfree: 'stay', amazonfree: 'product', etsyfree: 'product', tradeplan: 'trade', tradepost: 'trade', tradefree: 'trade', agencyplan: 'trade', emailplan: 'store', storeemail: 'store', emailfree: 'store', tradepack: 'trade', tradeplan3: 'trade', emailplan3: 'store' };
   var HINT = {
     home: 'Features, updates with the year, views, community, anything you want mentioned. Leave out anything you do not want in the description.',
     stay: 'How many guests it sleeps and the beds, features indoors and outdoors, the view, and any distances you want mentioned. Leave out anything you do not want in the listing.',
