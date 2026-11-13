@@ -157,6 +157,33 @@ optgroup { font-style: normal; font-weight: 700; }
       <label>The facts <small id="facts-hint">Features, updates with the year, views, community, anything you want mentioned. Leave out anything you do not want in the description.</small>
         <textarea id="f-facts" name="facts" maxlength="6000" required></textarea>
       </label>
+      <details id="plan-ex" hidden style="margin:-6px 0 4px"><summary style="cursor:pointer;color:var(--accent);font-weight:600">See a filled-in example (a made-up plumbing business)</summary><pre class="copy" style="white-space:pre-wrap;font-size:13px">business name : Harbor Oak Plumbing
+owner : Dana Reyes
+what you sell : Residential plumbing repairs and yearly maintenance plans.
+where : Greenville, SC
+customers : Homeowners within 20 miles.
+competitors : Two larger franchises and several one-truck operators.
+what sets you apart : Same-day visits and flat prices.
+team : Dana has 12 years as a licensed plumber.
+history : Starting in January.
+goals : A second truck in year three.
+how customers find you : A Google Business Profile and referral cards left with every customer.
+risks : A slow first winter; maintenance plans are sold to even out income.
+revenue : Service calls | $8,000 | $20,000 | 30% | 10%
+revenue : Maintenance plans | 0 | 3,000 | 10 | 20
+role : Technician | 4,200 | 1
+role : Office help | 2500 | 7
+payroll taxes : 12%
+cost : Rent | 1,500 | 1 | 3
+cost : Insurance | 400 | 1 | 0
+cost : Van fuel | 600 | 1 | 2
+startup : Service van | 38,000 | asset | 5
+startup : Tools | 9,000 | asset | 7
+startup : Licences and deposits | 3,500 | expense
+owner cash : $25,000
+loan : 60,000 | 9.5% | 84
+income tax : 21
+owner draw : 3,000 | 4</pre><p style="color:var(--dim);font-size:14px;margin:6px 0 0">Each revenue line reads: name | sales in month one | sales a month by month twelve | what it costs you to deliver, as a percent of the sale | yearly growth after year one.</p></details>
       <div class="row">
         <label>Requests <small>Optional. Tone, what to lead with, what to leave out.</small><input id="f-wish" name="requests" maxlength="300"></label>
  <label id="limit-wrap">MLS character limit <small>Optional.</small><input id="f-limit" name="mls_limit" inputmode="numeric" maxlength="6" placeholder="1000"></label>
@@ -220,7 +247,7 @@ optgroup { font-style: normal; font-weight: 700; }
   var form = $('order'), go = $('go'), err = $('err'), done = $('done'), pkg = $('f-pkg');
   var want = (location.search.match(/[?&]p=([a-z0-9]+)\b/) || [])[1];
   if (want && NAME[want]) pkg.value = want;
-  function shape() { var g = GROUP[pkg.value] || 'home', fx = $('f-facts'); if (g === 'plan' && !fx.value.trim()) fx.value = PLANFORM; if (g !== 'plan' && fx.value.trim() === PLANFORM.trim()) fx.value = ''; fx.style.minHeight = g === 'plan' ? '460px' : ''; fx.style.fontFamily = g === 'plan' ? 'ui-monospace, Menlo, Consolas, monospace' : ''; fx.style.fontSize = g === 'plan' ? '13.5px' : ''; $('prop-row').hidden = (g === 'product' || g === 'bio' || g === 'trade' || g === 'store' || g === 'plan'); $('limit-wrap').hidden = (g !== 'home'); $('facts-hint').textContent = HINT[g]; var biz = (g === 'trade' || g === 'store'); $('biz-row').hidden = !biz; $('b1-l').textContent = g === 'store' ? 'Products you want written about' : 'Services you want written about'; $('b4-l').textContent = g === 'store' ? 'Where you ship' : 'Towns or areas you serve'; }
+  function shape() { var g = GROUP[pkg.value] || 'home', fx = $('f-facts'); if (g === 'plan' && !fx.value.trim()) fx.value = PLANFORM; if (g !== 'plan' && fx.value.trim() === PLANFORM.trim()) fx.value = ''; fx.style.minHeight = g === 'plan' ? '460px' : ''; $('plan-ex').hidden = g !== 'plan'; fx.style.fontFamily = g === 'plan' ? 'ui-monospace, Menlo, Consolas, monospace' : ''; fx.style.fontSize = g === 'plan' ? '13.5px' : ''; $('prop-row').hidden = (g === 'product' || g === 'bio' || g === 'trade' || g === 'store' || g === 'plan'); $('limit-wrap').hidden = (g !== 'home'); $('facts-hint').textContent = HINT[g]; var biz = (g === 'trade' || g === 'store'); $('biz-row').hidden = !biz; $('b1-l').textContent = g === 'store' ? 'Products you want written about' : 'Services you want written about'; $('b4-l').textContent = g === 'store' ? 'Where you ship' : 'Towns or areas you serve'; }
   pkg.addEventListener('change', shape); shape();
   function label() { go.textContent = !OPEN ? 'Orders open soon' : (FREE[pkg.value] ? 'Send my free sample request' : PAY[pkg.value] ? 'Continue to payment' : 'Send my order'); }
   pkg.addEventListener('change', label);
