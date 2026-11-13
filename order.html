@@ -120,7 +120,10 @@ optgroup { font-style: normal; font-weight: 700; }
           <option value="tradeplan">Monthly plan: 2 blog posts, 4 Google posts, review replies ($149 a month)</option>
           <option value="tradeplan3">Monthly plan, three months paid up front ($399, saves $48)</option>
           <option value="tradepack">Starter pack: 12 blog posts and 12 Google posts, one payment ($499)</option>
+          <option value="webpack">Website copy: five pages written for your business, one payment ($249)</option>
+          <option value="webpage">One website page: home, about, a service or a service area ($59)</option>
           <option value="tradepost">One blog post for your trade business ($39)</option>
+          <option value="tradelong">One long blog post, about 1,000 words ($69)</option>
           <option value="tradefree">Free first blog post, one per business</option>
           <option value="agencyplan">Agencies: the monthly set for one of your clients ($99 a month per client)</option>
           </optgroup>
@@ -184,17 +187,20 @@ optgroup { font-style: normal; font-weight: 700; }
     emailplan: 'https://buy.stripe.com/8x2bJ2749aW88Yh6c5eUU0d',
     tradepack: 'https://buy.stripe.com/5kQ3cw2NT6FS4I11VPeUU0f',
     tradeplan3: 'https://buy.stripe.com/8x2dRa7495BO5M5581eUU0g',
-    emailplan3: 'https://buy.stripe.com/eVq4gA3RX4xK2zTfMFeUU0h'
+    emailplan3: 'https://buy.stripe.com/eVq4gA3RX4xK2zTfMFeUU0h',
+    webpack: 'https://buy.stripe.com/eVqaEYdsx6FSgqJ0RLeUU0i',
+    webpage: 'https://buy.stripe.com/14A8wQagl0hu4I1bwpeUU0j',
+    tradelong: 'https://buy.stripe.com/5kQ7sM2NT6FS1vPfMFeUU0k'
   };
-  var NAME = { single: 'Standard ($10)', long: 'Long ($15)', five: 'Five-pack ($40)', sample: 'Free sample', rental: 'Rental listing ($10)', vacation: 'Vacation rental listing ($29)', amazon: 'Amazon listing ($29)', etsy: 'Etsy listing ($12)', etsy5: 'Etsy five-pack ($49)', bio: 'Agent bio ($19)', vacationfree: 'Free sample, vacation rental', amazonfree: 'Free sample, Amazon', etsyfree: 'Free sample, Etsy', tradeplan: 'Trades monthly plan ($149 a month)', tradepost: 'Trade blog post ($39)', tradefree: 'Free first post, trades', agencyplan: 'Agency plan, one client ($99 a month)', emailplan: 'Store email plan ($349 a month)', storeemail: 'Store email ($49)', emailfree: 'Free first email, stores', tradepack: 'Trades starter pack ($499, one payment)', tradeplan3: 'Trades plan, three months ($399)', emailplan3: 'Store email plan, three months ($899)' };
+  var NAME = { single: 'Standard ($10)', long: 'Long ($15)', five: 'Five-pack ($40)', sample: 'Free sample', rental: 'Rental listing ($10)', vacation: 'Vacation rental listing ($29)', amazon: 'Amazon listing ($29)', etsy: 'Etsy listing ($12)', etsy5: 'Etsy five-pack ($49)', bio: 'Agent bio ($19)', vacationfree: 'Free sample, vacation rental', amazonfree: 'Free sample, Amazon', etsyfree: 'Free sample, Etsy', tradeplan: 'Trades monthly plan ($149 a month)', tradepost: 'Trade blog post ($39)', tradefree: 'Free first post, trades', agencyplan: 'Agency plan, one client ($99 a month)', emailplan: 'Store email plan ($349 a month)', storeemail: 'Store email ($49)', emailfree: 'Free first email, stores', tradepack: 'Trades starter pack ($499, one payment)', tradeplan3: 'Trades plan, three months ($399)', emailplan3: 'Store email plan, three months ($899)', webpack: 'Website copy, five pages ($249, one payment)', webpage: 'Website page ($59)', tradelong: 'Trade long blog post ($69)' };
   var FREE = { sample: 1, vacationfree: 1, amazonfree: 1, etsyfree: 1, tradefree: 1, emailfree: 1 };
-  var GROUP = { single: 'home', long: 'home', five: 'home', sample: 'home', rental: 'home', vacation: 'stay', amazon: 'product', etsy: 'product', etsy5: 'product', bio: 'bio', vacationfree: 'stay', amazonfree: 'product', etsyfree: 'product', tradeplan: 'trade', tradepost: 'trade', tradefree: 'trade', agencyplan: 'trade', emailplan: 'store', storeemail: 'store', emailfree: 'store', tradepack: 'trade', tradeplan3: 'trade', emailplan3: 'store' };
+  var GROUP = { single: 'home', long: 'home', five: 'home', sample: 'home', rental: 'home', vacation: 'stay', amazon: 'product', etsy: 'product', etsy5: 'product', bio: 'bio', vacationfree: 'stay', amazonfree: 'product', etsyfree: 'product', tradeplan: 'trade', tradepost: 'trade', tradefree: 'trade', agencyplan: 'trade', emailplan: 'store', storeemail: 'store', emailfree: 'store', tradepack: 'trade', tradeplan3: 'trade', emailplan3: 'store', webpack: 'trade', webpage: 'trade', tradelong: 'trade' };
   var HINT = {
     home: 'Features, updates with the year, views, community, anything you want mentioned. Leave out anything you do not want in the description.',
     stay: 'How many guests it sleeps and the beds, features indoors and outdoors, the view, and any distances you want mentioned. Leave out anything you do not want in the listing.',
     product: 'What the product is, what it is made of, size and colour, what the buyer receives, and who makes it. Only claims you can support.',
     store: 'Store name, what you sell, and the products you want mentioned with their materials, sizes and prices. Add any offer exactly as it should read, with its code and end date. Nothing is announced that you did not send. Add a topic if you have one in mind.',
-    trade: 'Business name, trade, the town or area you serve, the services you want mentioned, and the phone number to use. Say licensed, insured, free estimates or 24-hour service only if they are true for you. Add a topic if you have one in mind.',
+    trade: 'Business name, trade, the town or area you serve, the services you want mentioned, and the phone number to use. Say licensed, insured, free estimates or 24-hour service only if they are true for you. Add a topic if you have one in mind. For a website page, say which page you want.',
     bio: 'Name, brokerage, area served, when you were licensed, what you focus on, and anything personal you want included. Only awards and numbers you can support.' };
   var $ = function (id) { return document.getElementById(id); };
   var form = $('order'), go = $('go'), err = $('err'), done = $('done'), pkg = $('f-pkg');
