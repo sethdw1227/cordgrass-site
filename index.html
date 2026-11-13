@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20512%20512%22%3E%3Crect%20width%3D%22512%22%20height%3D%22512%22%20rx%3D%2296%22%20fill%3D%22%231f6f5c%22/%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%23f7f4ee%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%2226%22%3E%3Cpath%20d%3D%22M256%20420%20C%20250%20320%2C%20236%20220%2C%20190%20120%22/%3E%3Cpath%20d%3D%22M256%20420%20C%20262%20310%2C%20280%20200%2C%20340%2096%22/%3E%3Cpath%20d%3D%22M256%20420%20C%20256%20340%2C%20256%20250%2C%20262%20150%22%20stroke-width%3D%2222%22/%3E%3Cpath%20d%3D%22M256%20420%20C%20236%20360%2C%20200%20310%2C%20140%20270%22%20stroke-width%3D%2220%22/%3E%3Cpath%20d%3D%22M256%20420%20C%20280%20366%2C%20320%20320%2C%20384%20290%22%20stroke-width%3D%2220%22/%3E%3C/g%3E%3Cpath%20d%3D%22M120%20424%20H392%22%20stroke%3D%22%23f7f4ee%22%20stroke-width%3D%2218%22%20stroke-linecap%3D%22round%22/%3E%3C/svg%3E">
-<meta name="description" content="MLS listing descriptions written from your facts, delivered by email. Cordgrass Studio, Hilton Head Island, SC.">
-<title>Cordgrass Studio</title>
+<meta name="description" content="Business plans with five-year projections, website copy, monthly blog and Google posts, store emails and listings for small businesses. Written only from the facts you send, delivered by email.">
+<title>Cordgrass Studio | Business plans, website copy and monthly content written from your facts</title>
+<link rel="canonical" href="https://cordgrassstudio.com/">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap">
 <style>
 :root { --bg:#f7f4ee; --card:#ffffff; --ink:#1c2b25; --dim:#5a6a62; --line:#e2dccf; --accent:#1f6f5c; --accent-ink:#ffffff; --gold:#b9801f; --soft:#e8f1ec; }
@@ -50,114 +51,81 @@ footer a { color: inherit; }
 @media (max-width: 760px) { .grid-links { grid-template-columns: 1fr; } }
 footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 14px; color: var(--dim); display: flex; flex-direction: column; gap: 6px; }
 @media (max-width: 760px) { .hero { grid-template-columns: 1fr; } .steps, .plans, .who, .samples { grid-template-columns: 1fr; } }
+
+[hidden] { display: none !important; }
+nav.links { display: flex; flex-wrap: wrap; gap: 16px; font: 600 15px/1 'Inter'; } nav.links a { color: var(--accent); text-decoration: none; } nav.links a:hover { text-decoration: underline; }
+.brand a { color: inherit; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.narrow { max-width: 44em; } .narrow p { margin: 0 0 14px; }
+.page h1 { font-size: clamp(30px, 5vw, 44px); }
+.two { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 28px; align-items: start; }
+.list { margin: 0; padding-left: 22px; } .list li { margin: 5px 0; }
+.grid-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; list-style: none; margin: 0; padding: 0; }
+.grid-links a { display: block; background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 13px 15px; color: var(--ink); text-decoration: none; font-weight: 600; } .grid-links a:hover { border-color: var(--accent); }
+.strip { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; }
+.strip p { margin: 0; } .strip .btn { margin-top: 0; }
+form.order { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 16px; }
+.row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; } .row.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+label { display: flex; flex-direction: column; gap: 6px; font: 600 15px/1.3 'Inter'; min-width: 0; } label small { font-weight: 400; color: var(--dim); }
+input, select, textarea { font: 400 16px/1.4 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 9px; padding: 11px 12px; width: 100%; }
+textarea { min-height: 150px; resize: vertical; } input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+button.btn { cursor: pointer; font-size: 17px; padding: 16px 18px; } button.btn[disabled] { background: var(--soft); color: var(--dim); cursor: default; }
+.notice { background: var(--soft); border-radius: 12px; padding: 14px 16px; margin: 0; } .notice.bad { background: transparent; border: 1px solid var(--gold); }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+pre.copy { white-space: pre-wrap; word-break: break-word; background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 14px; font: 400 14px/1.5 ui-monospace, Menlo, Consolas, monospace; margin: 0; max-height: 320px; overflow: auto; }
+.done { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 14px; }
+footer a { color: inherit; }
+.out .lb { display: block; font: 700 11px/1 'Inter'; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); margin: 12px 0 4px; } .out .lb:first-child { margin-top: 0; } .out.small { font-size: 16px; }
+.svc-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; } .svc-cards .plan .price { font-size: 32px; }
+optgroup { font-style: normal; font-weight: 700; }
+@media (max-width: 760px) { .two, .row, .row.three { grid-template-columns: 1fr; } .grid-links, .svc-cards { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body style="margin:0">
-<div class="wrap">
-  <header class="top"><div class="brand"><svg class="mark" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="96" fill="#1f6f5c"/><g fill="none" stroke="#f7f4ee" stroke-linecap="round" stroke-width="26"><path d="M256 420 C 250 320, 236 220, 190 120"/><path d="M256 420 C 262 310, 280 200, 340 96"/><path d="M256 420 C 256 340, 256 250, 262 150" stroke-width="22"/><path d="M256 420 C 236 360, 200 310, 140 270" stroke-width="20"/><path d="M256 420 C 280 366, 320 320, 384 290" stroke-width="20"/></g><path d="M120 424 H392" stroke="#f7f4ee" stroke-width="18" stroke-linecap="round"/></svg>Cordgrass <span>Studio</span></div><div class="tagline">MLS listing descriptions for agents and brokers</div></header>
+<div class="wrap page">
+  <header class="top"><div class="brand"><a href="index.html"><svg class="mark" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="96" fill="#1f6f5c"/><g fill="none" stroke="#f7f4ee" stroke-linecap="round" stroke-width="26"><path d="M256 420 C 250 320, 236 220, 190 120"/><path d="M256 420 C 262 310, 280 200, 340 96"/><path d="M256 420 C 256 340, 256 250, 262 150" stroke-width="22"/><path d="M256 420 C 236 360, 200 310, 140 270" stroke-width="20"/><path d="M256 420 C 280 366, 320 320, 384 290" stroke-width="20"/></g><path d="M120 424 H392" stroke="#f7f4ee" stroke-width="18" stroke-linecap="round"/></svg>Cordgrass <span>Studio</span></a></div><nav class="links" aria-label="Site"><a href="services.html">Services</a><a href="business-plans.html">Business plans</a><a href="for-agencies.html">Agencies</a><a href="order.html">Order</a></nav></header>
 
-  <section class="hero">
+  <section class="two">
     <div>
-      <h1>MLS listing descriptions, <em>in your inbox tomorrow.</em></h1>
-      <p class="lead">Send the facts about a property. Get back a description that helps a buyer picture the home, sized for your MLS and ready to paste. Nothing is added that you did not send.</p>
-      <div class="cta"><a class="btn" aria-disabled="true" data-order="single">Orders open soon · $10</a><a class="link" href="#samples">See samples</a></div>
-      <ul class="chips"><li>Next-day delivery</li><li>Fair-housing aware wording</li><li>One round of changes</li><li>Money back if unusable</li></ul>
+      <h1>The writing your business needs, <em>done from your facts</em></h1>
+      <p class="lead">Cordgrass Studio writes business plans, website copy, monthly blog and Google posts, store emails and listings for small businesses across the United States. You send the facts. The finished work comes back by email, and nothing is added that you did not send.</p>
+      <div class="cta"><a class="btn" href="services.html">See what we write and what it costs</a><a class="link" href="order.html">Start an order</a></div>
+      <ul class="chips"><li>Only your facts</li><li>Checked before it is sent</li><li>No calls needed</li><li>Money back if unusable</li></ul>
     </div>
-    <aside class="sample" aria-label="Sample">
-      <p class="k">You send</p>
-      <p class="facts">Condo, 2 bed, 2 bath, 1,120 sq ft, second floor, balcony, kitchen updated 2022 with quartz counters, community pool, one assigned parking space. Warm tone, lead with the balcony.</p>
+    <aside class="sample" aria-label="Example">
+      <p class="k">A business plan: you send</p>
+      <p class="facts" style="white-space:pre-line;font-size:14px">business name : Harbor Oak Plumbing
+what you sell : Residential plumbing repairs and yearly maintenance plans.
+where : Greenville, SC
+what sets you apart : Same-day visits and flat prices.
+revenue : Service calls | $8,000 | $20,000 | 30% | 10%
+role : Technician | 4,200 | 1
+cost : Rent | 1,500 | 1 | 3
+(and about twenty more lines)</p>
       <p class="k">You get</p>
-      <p class="out">Step out onto the balcony of this second floor condo, which has 2 bedrooms, 2 baths and 1,120 sq ft of living space. The kitchen was updated in 2022 with quartz counters. You will love the community pool, and one assigned parking space comes with the unit.</p>
-      <p class="note">Made-up property, real output. Not a real customer.</p>
+      <div class="out small">From the executive summary:<br><br>Harbor Oak Plumbing is a Greenville, SC business offering residential plumbing repairs and yearly maintenance plans. Its customers are homeowners within 20 miles. What sets it apart is same-day visits and flat prices.<br><br>Harbor Oak Plumbing is projected to reach sales of $186,000 in year one, with a net profit of $10,063. The first month with a profit before tax is projected to be month 4. By year five, sales are projected to grow to $405,251, with a net profit of $128,872.<br><br>Dana Reyes, the owner, plans to add a second truck in year three.</div>
+      <p class="note" style="margin-top:12px">Example from made-up facts. It passed the same checks every order goes through.</p>
     </aside>
   </section>
-
+  <section><h2>Where most people start</h2><div class="svc-cards">
+    <div class="plan"><p class="k">Small business</p><h3>Business plans</h3><div class="price">$295</div><p>A complete written plan with five years of projections, as a Word document and an Excel workbook, in two business days.</p><a class="btn" href="business-plans.html">See what is in it</a></div>
+    <div class="plan"><p class="k">Local trades</p><h3>Monthly content</h3><div class="price">$149<span style="font-size:.5em"> a month</span></div><p>Two blog posts, four Google Business posts and review replies every month for plumbers, roofers, heating and cooling, and other trades.</p><a class="btn" href="local-trades-content.html">See an example</a></div>
+    <div class="plan"><p class="k">Local trades</p><h3>Website copy</h3><div class="price">$249</div><p>Five pages for a trade business: home, about, services, service area, and questions and answers. One payment.</p><a class="btn" href="order.html?p=webpack">Order the five pages</a></div>
+    <div class="plan"><p class="k">Online stores</p><h3>Emails for your list</h3><div class="price">$129</div><p>A welcome series of three emails for new subscribers, or eight fresh emails every month for $349.</p><a class="btn" href="store-email-plan.html">See an example</a></div>
+    <div class="plan"><p class="k">Agencies and web designers</p><h3>Writing under your name</h3><div class="price">$99<span style="font-size:.5em"> a client</span></div><p>Monthly content and website copy for your clients, delivered to you as plain text with no Cordgrass Studio name on it.</p><a class="btn" href="for-agencies.html">How agencies use it</a></div>
+    <div class="plan"><p class="k">Agents, hosts and sellers</p><h3>Listings and bios</h3><div class="price">from $10</div><p>MLS and rental descriptions, vacation rental listings, Amazon and Etsy listings, and agent bios.</p><a class="btn" href="services.html">All services and prices</a></div>
+  </div></section>
   <section>
-    <h2>Who it is for</h2><p class="sub">Anyone who has a property to list and would rather not write the description.</p>
-    <div class="who">
-      <div class="aud"><h3>Agents and brokers</h3><p>A finished description for each new listing, without giving up an evening to write it.</p></div>
-      <div class="aud"><h3>Investors and landlords</h3><p>Every listing written the same clear way, whether it is one property or twenty.</p></div>
-      <div class="aud"><h3>Owners selling their own home</h3><p>You know the house. We turn what you know into a listing that reads well.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>More from the studio</h2><p class="sub">The same way of working, for other kinds of listings. You send the facts, and nothing is added.</p>
-    <ul class="grid-links"><li><a href="vacation-rental-listings.html">Vacation rental listings</a></li><li><a href="rental-listings.html">Rental listings</a></li><li><a href="agent-bios.html">Agent bios</a></li><li><a href="amazon-listings.html">Amazon listings</a></li><li><a href="etsy-listings.html">Etsy listings</a></li><li><a href="services.html">All services and prices</a></li></ul>
-  </section>
-
-  <section id="samples">
-    <h2>Samples</h2><p class="sub">The facts on top are everything the writer was given. Compare them with the description and you will see nothing was invented. These are shown exactly as they came out, unedited.</p>
-    <div class="samples">
-      <div class="sample"><p class="k">Home, from an agent's rough notes</p><p class="facts">4BR/3.5BA, 3,150sf two story in Indigo Run, built 2004. primary on main. saltwater pool added 2021, screened lanai. kitchen: quartz counters, gas cooktop, walk-in pantry. hardwood floors downstairs. 3 car garage. whole-house generator. golf view of 7th fairway. new HVAC 2023. Asked for: warm tone, lead with the pool and golf view.</p><p class="out">Enjoy your own saltwater pool, added in 2021, and the golf view of the 7th fairway at this Indigo Run home. Screened lanai.<br><br>Built in 2004, this two story home has 3,150 sf with 4 bedrooms and 3.5 baths, and the primary bedroom is on the main floor. Hardwood floors downstairs. You will love the kitchen, which has quartz counters, a gas cooktop and a walk-in pantry.<br><br>The home also has a 3 car garage, a whole-house generator and a new HVAC system installed in 2023.</p><p class="note">Made-up property, real output.</p></div>
-      <div class="sample"><p class="k">Homesite</p><p class="facts">Homesite, 0.42-acre lot, wooded, end of cul-de-sac, water and sewer at the street, survey available.</p><p class="out">This 0.42-acre wooded homesite sits at the end of a cul-de-sac, with water and sewer at the street. A survey is available.</p><p class="note">Made-up property, real output.</p></div>
-      <div class="sample"><p class="k">Condo, terse notes</p><p class="facts">condo 2/2 1,120 sqft 2nd flr, balcony facing marina, comm pool, 1 assigned parking spot. updated baths 2022. tile and carpet. washer dryer in unit</p><p class="out">The balcony faces the marina on this 2nd-floor condo with 2 bedrooms and 2 baths. The baths were updated in 2022, and the unit has 1,120 square feet. Flooring is tile and carpet. Cool off in the community pool. A washer and dryer are in the unit, and 1 parking spot is assigned.</p><p class="note">Made-up property, real output.</p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>How it works</h2><p class="sub">Three steps, no calls, no back and forth unless you want it.</p>
+    <h2>How it works</h2>
     <div class="steps">
-      <div class="step"><div class="num">1</div><h3>Order and send the facts</h3><p>Property type, bedrooms, bathrooms, size, key features and anything special about the setting. Bullet points are fine.</p></div>
-      <div class="step"><div class="num">2</div><h3>It is written and checked</h3><p>The description uses only your facts. Every one is checked for wording that describes the property, not the buyer.</p></div>
-      <div class="step"><div class="num">3</div><h3>It arrives by email</h3><p>Plain text, sized for your MLS. Reply once with any changes and they are included.</p></div>
+      <div class="step"><h3>1. Send the facts</h3><p>Pick what you need on the order page and type what you know. Rough notes are fine. If something is missing you get a question, never a guess.</p></div>
+      <div class="step"><h3>2. It is written and checked</h3><p>Software tools, including AI, draft the work and check every claim against what you sent. A person reads it before it goes out.</p></div>
+      <div class="step"><h3>3. It arrives by email</h3><p>Plain text or files, ready to use. Ask for changes by replying. If it is not usable, you get your money back.</p></div>
     </div>
   </section>
-
-  <section>
-    <h2>Pricing</h2><p class="sub">One description per order, priced by length. No subscription.</p>
-    <div class="plans">
-      <div class="plan best"><p class="k">Standard</p><div class="price">$10</div><h3>Up to 1,000 characters</h3><ul><li>Fits most MLS remarks fields</li><li>Next-day delivery</li><li>One round of changes</li></ul><a class="btn" aria-disabled="true" data-order="single">Orders open soon</a></div>
-      <div class="plan"><p class="k">Long</p><div class="price">$15</div><h3>Up to 2,000 characters</h3><ul><li>For websites and larger properties</li><li>Delivered within 2 days</li><li>One round of changes</li></ul><a class="btn" aria-disabled="true" data-order="long">Orders open soon</a></div>
-      <div class="plan"><p class="k">First one</p><div class="price">Free</div><h3>One sample</h3><p>Agents and brokers: one description for a current listing, free, so you can judge the work before paying for anything.</p><a class="btn" aria-disabled="true" data-order="sample">Opens soon</a></div>
-    </div>
-    <p class="bulk">List often? <a class="link" data-order="five">Five standard descriptions for $40</a>, used as your listings come in.</p>
-  </section>
-
-  <section>
-    <h2>Questions</h2>
-    <div class="faq">
-      <details><summary>What do I need to send?</summary><p>The property type, bedrooms, bathrooms, approximate size, and the features you want mentioned. Add anything about the setting or view. If your MLS has a character limit, include it.</p></details>
-      <details><summary>Is it written by AI or by a person?</summary><p>Both. Software tools, including AI, draft and check each description, and a person reads every one before it is sent to you.</p></details>
-      <details><summary>Will it fit my MLS rules?</summary><p>Each description is kept to the length you order and checked for wording that describes the property rather than the buyer. MLS rules differ by region, so give it a read against your own board's rules before you post.</p></details>
-      <details><summary>Do you look at my photos or visit the property?</summary><p>No. The description is written only from the facts you type, and those facts are not verified. If something matters, put it in your notes.</p></details>
-      <details><summary>How fast is it?</summary><p>Standard descriptions arrive by the end of the next day after your facts arrive. Long descriptions arrive within 2 days.</p></details>
-      <details><summary>What if I want changes, or it is not usable?</summary><p>Reply once with your changes and they are included. If the description still is not usable, you get your money back.</p></details>
-    </div>
-  </section>
-
-  <section class="promise">
-    <h2>Plain promises</h2>
-    <ul>
-      <li>Only your facts are used. If something is missing, you are asked. Nothing is guessed.</li>
-      <li>A person reads every description before it is sent.</li>
-      <li>If the description is not usable, you get your money back.</li>
-    </ul>
-  </section>
-
-  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>Questions: <a class="mail" href="mailto:hello@cordgrassstudio.com">hello@cordgrassstudio.com</a></div><div><a href="services.html">Services</a> · <a href="markets.html">Markets</a> · <a href="partners.html">Partners</a> · <a href="order.html">Order</a></div><div><span id="open-note">Orders are not open yet.</span></div></footer>
+  <section class="promise"><h2>Plain promises</h2><ul><li>Only your facts are used. No invented statistics, awards, prices or claims.</li><li>No results are promised: not rankings, not sales, not outcomes.</li><li>No contract on monthly work. Cancel by replying to any email.</li><li>If the work is not usable, you get your money back.</li></ul></section>
+  <section class="strip"><p><b>Not sure which one fits?</b> Email <a href="mailto:hello@cordgrassstudio.com">hello@cordgrassstudio.com</a> with what you need written. You get a straight answer and a price.</p><a class="btn" href="order.html">Start an order</a></section>
+  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>Questions: <a href="mailto:hello@cordgrassstudio.com">hello@cordgrassstudio.com</a></div><div><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="markets.html">Markets</a> · <a href="partners.html">Partners</a> · <a href="for-agencies.html">Agencies</a> · <a href="order.html">Order</a></div></footer>
 </div>
 
-
-<script>
-/* Orders switch. Set OPEN to true here and in order.html on launch day and upload both files again. The Stripe links live in order.html. */
-(function () {
-  var OPEN = false;
-  var LINKS = {
-    single: 'order.html?p=single',
-    long: 'order.html?p=long',
-    five: 'order.html?p=five',
-    sample: 'order.html?p=sample'
-  };
-  var LABEL = { single: 'Order for $10', long: 'Order for $15', five: null, sample: 'Ask for your free sample' };
-  if (!OPEN) return;
-  Array.prototype.forEach.call(document.querySelectorAll('[data-order]'), function (a) {
-    var k = a.getAttribute('data-order'); if (!LINKS[k]) return;
-    a.setAttribute('href', LINKS[k]); a.removeAttribute('aria-disabled');
-    if (LABEL[k]) a.textContent = LABEL[k];
-  });
-  var foot = document.getElementById('open-note'); if (foot) foot.textContent = 'Orders are open.';
-})();
-</script>
 </body>
 </html>
