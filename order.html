@@ -161,7 +161,7 @@ optgroup { font-style: normal; font-weight: 700; }
 /* Order page switch. OPEN turns the form on. FORM_KEY is the Web3Forms access key that emails each order to the studio.
    With OPEN true and no FORM_KEY, the page shows the buyer their details to email by hand, then the payment link. */
 (function () {
-  var OPEN = false; if (/[?&]k=cg-chain-7741(&|$)/.test(location.search)) OPEN = true;
+  var OPEN = false;
   var FORM_KEY = '1e2c8daf-4d88-4d92-aa37-a1555adfd5a5';
   var MAIL = 'hello@cordgrassstudio.com';
   var PAY = {
