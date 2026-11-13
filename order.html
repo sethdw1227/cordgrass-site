@@ -113,6 +113,11 @@ optgroup { font-style: normal; font-weight: 700; }
           <option value="storeemail">One marketing email ($49)</option>
           <option value="emailfree">Free first email, one per store</option>
           </optgroup>
+          <optgroup label="Business plans">
+          <option value="bizplan">Business plan: the full written plan with five-year projections, Word and Excel ($295)</option>
+          <option value="bizplus">Business plan, plus one full redo if your numbers change ($395)</option>
+          <option value="biznum">Five-year projections only, as an Excel workbook ($145)</option>
+          </optgroup>
           <optgroup label="Agents">
           <option value="bio">Agent bio ($19)</option>
           </optgroup>
@@ -190,23 +195,28 @@ optgroup { font-style: normal; font-weight: 700; }
     emailplan3: 'https://buy.stripe.com/eVq4gA3RX4xK2zTfMFeUU0h',
     webpack: 'https://buy.stripe.com/eVqaEYdsx6FSgqJ0RLeUU0i',
     webpage: 'https://buy.stripe.com/14A8wQagl0hu4I1bwpeUU0j',
-    tradelong: 'https://buy.stripe.com/5kQ7sM2NT6FS1vPfMFeUU0k'
+    tradelong: 'https://buy.stripe.com/5kQ7sM2NT6FS1vPfMFeUU0k',
+    biznum: 'https://buy.stripe.com/8x2dRacot1lycat9oheUU0l',
+    bizplan: 'https://buy.stripe.com/cNi28s6053tGgqJ6c5eUU0m',
+    bizplus: 'https://buy.stripe.com/8x29AUbkp8O0eiB7g9eUU0n'
   };
-  var NAME = { single: 'Standard ($10)', long: 'Long ($15)', five: 'Five-pack ($40)', sample: 'Free sample', rental: 'Rental listing ($10)', vacation: 'Vacation rental listing ($29)', amazon: 'Amazon listing ($29)', etsy: 'Etsy listing ($12)', etsy5: 'Etsy five-pack ($49)', bio: 'Agent bio ($19)', vacationfree: 'Free sample, vacation rental', amazonfree: 'Free sample, Amazon', etsyfree: 'Free sample, Etsy', tradeplan: 'Trades monthly plan ($149 a month)', tradepost: 'Trade blog post ($39)', tradefree: 'Free first post, trades', agencyplan: 'Agency plan, one client ($99 a month)', emailplan: 'Store email plan ($349 a month)', storeemail: 'Store email ($49)', emailfree: 'Free first email, stores', tradepack: 'Trades starter pack ($499, one payment)', tradeplan3: 'Trades plan, three months ($399)', emailplan3: 'Store email plan, three months ($899)', webpack: 'Website copy, five pages ($249, one payment)', webpage: 'Website page ($59)', tradelong: 'Trade long blog post ($69)' };
+  var NAME = { single: 'Standard ($10)', long: 'Long ($15)', five: 'Five-pack ($40)', sample: 'Free sample', rental: 'Rental listing ($10)', vacation: 'Vacation rental listing ($29)', amazon: 'Amazon listing ($29)', etsy: 'Etsy listing ($12)', etsy5: 'Etsy five-pack ($49)', bio: 'Agent bio ($19)', vacationfree: 'Free sample, vacation rental', amazonfree: 'Free sample, Amazon', etsyfree: 'Free sample, Etsy', tradeplan: 'Trades monthly plan ($149 a month)', tradepost: 'Trade blog post ($39)', tradefree: 'Free first post, trades', agencyplan: 'Agency plan, one client ($99 a month)', emailplan: 'Store email plan ($349 a month)', storeemail: 'Store email ($49)', emailfree: 'Free first email, stores', tradepack: 'Trades starter pack ($499, one payment)', tradeplan3: 'Trades plan, three months ($399)', emailplan3: 'Store email plan, three months ($899)', webpack: 'Website copy, five pages ($249, one payment)', webpage: 'Website page ($59)', tradelong: 'Trade long blog post ($69)', biznum: 'Business plan, projections only ($145)', bizplan: 'Business plan, full ($295)', bizplus: 'Business plan, full, with one redo ($395)' };
   var FREE = { sample: 1, vacationfree: 1, amazonfree: 1, etsyfree: 1, tradefree: 1, emailfree: 1 };
-  var GROUP = { single: 'home', long: 'home', five: 'home', sample: 'home', rental: 'home', vacation: 'stay', amazon: 'product', etsy: 'product', etsy5: 'product', bio: 'bio', vacationfree: 'stay', amazonfree: 'product', etsyfree: 'product', tradeplan: 'trade', tradepost: 'trade', tradefree: 'trade', agencyplan: 'trade', emailplan: 'store', storeemail: 'store', emailfree: 'store', tradepack: 'trade', tradeplan3: 'trade', emailplan3: 'store', webpack: 'trade', webpage: 'trade', tradelong: 'trade' };
+  var GROUP = { single: 'home', long: 'home', five: 'home', sample: 'home', rental: 'home', vacation: 'stay', amazon: 'product', etsy: 'product', etsy5: 'product', bio: 'bio', vacationfree: 'stay', amazonfree: 'product', etsyfree: 'product', tradeplan: 'trade', tradepost: 'trade', tradefree: 'trade', agencyplan: 'trade', emailplan: 'store', storeemail: 'store', emailfree: 'store', tradepack: 'trade', tradeplan3: 'trade', emailplan3: 'store', webpack: 'trade', webpage: 'trade', tradelong: 'trade', biznum: 'plan', bizplan: 'plan', bizplus: 'plan' };
+  var PLANFORM = "business name : \nowner : \nwhat you sell : \nwhere : \ncustomers : \ncompetitors : \nwhat sets you apart : \nteam : \nhistory : \ngoals : \nhow customers find you : \nrisks : (the two or three things most likely to go wrong, and what you would do)\nprices : (optional)\npremises : (optional)\nsuppliers : (optional)\nlicences and insurance : (optional)\nopening hours : (optional)\nrevenue : name | sales in month one | sales a month by month twelve | direct cost % | yearly growth % after year one\nrole : job title | monthly cost | month they start\npayroll taxes : %\ncost : name | monthly amount | month it starts | yearly increase %\nstartup : name | amount | asset or expense | years it lasts (assets only)\nowner cash : amount\nloan : amount | interest rate % | months   (or: none)\nincome tax : %\nowner draw : monthly amount | month it starts";
   var HINT = {
     home: 'Features, updates with the year, views, community, anything you want mentioned. Leave out anything you do not want in the description.',
     stay: 'How many guests it sleeps and the beds, features indoors and outdoors, the view, and any distances you want mentioned. Leave out anything you do not want in the listing.',
     product: 'What the product is, what it is made of, size and colour, what the buyer receives, and who makes it. Only claims you can support.',
     store: 'Store name, what you sell, and the products you want mentioned with their materials, sizes and prices. Add any offer exactly as it should read, with its code and end date. Nothing is announced that you did not send. Add a topic if you have one in mind.',
     trade: 'Business name, trade, the town or area you serve, the services you want mentioned, and the phone number to use. Say licensed, insured, free estimates or 24-hour service only if they are true for you. Add a topic if you have one in mind. For a website page, say which page you want.',
+    plan: 'Type your answer after each colon, in place of the words that are there. Best estimates are fine for the numbers: they are your assumptions, and the plan says so. Copy the revenue, role, cost and startup lines once for each one you have, and delete a line you do not need. If an answer is unclear you get a question back, never a guess.',
     bio: 'Name, brokerage, area served, when you were licensed, what you focus on, and anything personal you want included. Only awards and numbers you can support.' };
   var $ = function (id) { return document.getElementById(id); };
   var form = $('order'), go = $('go'), err = $('err'), done = $('done'), pkg = $('f-pkg');
   var want = (location.search.match(/[?&]p=([a-z0-9]+)\b/) || [])[1];
   if (want && NAME[want]) pkg.value = want;
-  function shape() { var g = GROUP[pkg.value] || 'home'; $('prop-row').hidden = (g === 'product' || g === 'bio' || g === 'trade' || g === 'store'); $('limit-wrap').hidden = (g !== 'home'); $('facts-hint').textContent = HINT[g]; var biz = (g === 'trade' || g === 'store'); $('biz-row').hidden = !biz; $('b1-l').textContent = g === 'store' ? 'Products you want written about' : 'Services you want written about'; $('b4-l').textContent = g === 'store' ? 'Where you ship' : 'Towns or areas you serve'; }
+  function shape() { var g = GROUP[pkg.value] || 'home', fx = $('f-facts'); if (g === 'plan' && !fx.value.trim()) fx.value = PLANFORM; if (g !== 'plan' && fx.value.trim() === PLANFORM.trim()) fx.value = ''; fx.style.minHeight = g === 'plan' ? '460px' : ''; fx.style.fontFamily = g === 'plan' ? 'ui-monospace, Menlo, Consolas, monospace' : ''; fx.style.fontSize = g === 'plan' ? '13.5px' : ''; $('prop-row').hidden = (g === 'product' || g === 'bio' || g === 'trade' || g === 'store' || g === 'plan'); $('limit-wrap').hidden = (g !== 'home'); $('facts-hint').textContent = HINT[g]; var biz = (g === 'trade' || g === 'store'); $('biz-row').hidden = !biz; $('b1-l').textContent = g === 'store' ? 'Products you want written about' : 'Services you want written about'; $('b4-l').textContent = g === 'store' ? 'Where you ship' : 'Towns or areas you serve'; }
   pkg.addEventListener('change', shape); shape();
   function label() { go.textContent = !OPEN ? 'Orders open soon' : (FREE[pkg.value] ? 'Send my free sample request' : PAY[pkg.value] ? 'Continue to payment' : 'Send my order'); }
   pkg.addEventListener('change', label);
@@ -258,6 +268,7 @@ optgroup { font-style: normal; font-weight: 700; }
       size: val('f-size'), mls_limit: val('f-limit'), requests: val('f-wish'), facts: val('f-facts') };
     var gg = GROUP[pkg.value]; if (gg === 'trade' || gg === 'store') { var ex = [[gg === 'store' ? 'Products' : 'Services', 'f-b1'], ['Customers often ask', 'f-b2'], ['What sets us apart', 'f-b3'], [gg === 'store' ? 'Ships to' : 'Area served', 'f-b4'], ['Contact', 'f-b5']].filter(function (x) { return val(x[1]); }).map(function (x) { return x[0] + ': ' + val(x[1]); }).join('\n'); if (ex) d.facts = (ex + '\n' + d.facts).slice(0, 6000); }
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)) return fail('Please enter the email address the description should be sent to.');
+    if (gg === 'plan') { if (d.facts.trim() === PLANFORM.trim() || !/^[ \t]*business name[ \t]*:[ \t]*\S/im.test(d.facts) || !/^[ \t]*revenue[ \t]*:[ \t]*[^|\n]+\|[ \t]*\$?[\d,]+/im.test(d.facts)) return fail('Please fill in the questions first: at least the business name and one revenue line with your own numbers.'); }
     if (d.facts.length < 30) return fail('Please add the facts about the property. A few lines is enough.');
     if ($('f-bot').checked) return;
     if (!FORM_KEY) return showDone('manual', d);
