@@ -189,6 +189,7 @@ owner draw : 3,000 | 4</pre><p style="color:var(--dim);font-size:14px;margin:6px
  <label id="limit-wrap">MLS character limit <small>Optional.</small><input id="f-limit" name="mls_limit" inputmode="numeric" maxlength="6" placeholder="1000"></label>
       </div>
       <div class="hp" aria-hidden="true"><label>Leave this empty<input type="checkbox" id="f-bot" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
+      <label style="display:flex;gap:10px;align-items:flex-start;margin:10px 0;font-weight:500"><input type="checkbox" id="f-ok" style="margin-top:4px;width:18px;height:18px;flex:none"><span>The facts above are correct and I am allowed to share them. I understand the work is written from these facts, with software tools including AI, and read by a person before it is sent.</span></label>
       <p class="notice bad" id="err" hidden></p>
       <button class="btn" id="go" type="submit" disabled>Orders open soon</button>
       <p style="margin:0;color:var(--dim);font-size:14.5px">Paid orders go to a secure Stripe page next. If the description is not usable, you get your money back.</p>
@@ -295,6 +296,7 @@ owner draw : 3,000 | 4</pre><p style="color:var(--dim);font-size:14px;margin:6px
   form.addEventListener('submit', function (ev) {
     ev.preventDefault(); err.hidden = true;
     if (!OPEN || go.disabled) return;
+    if (!document.getElementById('f-ok').checked) return fail('Please tick the box to confirm the facts are correct.');
     var d = { order_code: code(), package: pkg.value, name: val('f-name'), email: val('f-email'), property_type: val('f-type'), beds_baths: val('f-beds'),
       size: val('f-size'), mls_limit: val('f-limit'), requests: val('f-wish'), facts: val('f-facts') };
     var gg = GROUP[pkg.value]; if (gg === 'trade' || gg === 'store') { var ex = [[gg === 'store' ? 'Products' : 'Services', 'f-b1'], ['Customers often ask', 'f-b2'], ['What sets us apart', 'f-b3'], [gg === 'store' ? 'Ships to' : 'Area served', 'f-b4'], ['Contact', 'f-b5']].filter(function (x) { return val(x[1]); }).map(function (x) { return x[0] + ': ' + val(x[1]); }).join('\n'); if (ex) d.facts = (ex + '\n' + d.facts).slice(0, 6000); }
