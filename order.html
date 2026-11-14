@@ -84,7 +84,7 @@ optgroup { font-style: normal; font-weight: 700; }
 <div class="wrap page">
   <header class="top"><div class="brand"><a href="index.html"><svg class="mark" viewBox="0 0 512 512" aria-hidden="true"><rect width="512" height="512" rx="96" fill="#1f6f5c"/><g fill="none" stroke="#f7f4ee" stroke-linecap="round" stroke-width="26"><path d="M256 420 C 250 320, 236 220, 190 120"/><path d="M256 420 C 262 310, 280 200, 340 96"/><path d="M256 420 C 256 340, 256 250, 262 150" stroke-width="22"/><path d="M256 420 C 236 360, 200 310, 140 270" stroke-width="20"/><path d="M256 420 C 280 366, 320 320, 384 290" stroke-width="20"/></g><path d="M120 424 H392" stroke="#f7f4ee" stroke-width="18" stroke-linecap="round"/></svg>Cordgrass <span>Studio</span></a></div><nav class="links" aria-label="Site"><a href="services.html">Services</a><a href="business-plans.html">Business plans</a><a href="for-agencies.html">Agencies</a><a href="order.html">Order</a></nav></header>
 
-  <section class="narrow"><h1>Start an order</h1><p class="lead">Fill in what you know. Bullet points and rough notes are fine. Only the facts you type are used.</p><p class="notice" id="state">Orders are not open yet. You can see below what we ask for.</p></section>
+  <section class="narrow"><h1>Start an order</h1><p class="lead">Fill in what you know. Bullet points and rough notes are fine. Every claim about the business comes from the facts you type; general background is written by us. <a href="privacy.html">How your details are handled</a>.</p><p class="notice" id="state">Orders are not open yet. You can see below what we ask for.</p></section>
   <section>
     <form class="order" id="order" novalidate>
       <label>What would you like?
@@ -146,6 +146,10 @@ optgroup { font-style: normal; font-weight: 700; }
         <label>Size<input id="f-size" name="size" placeholder="2,100 sq ft" maxlength="40"></label>
       </div>
       <div id="biz-row" hidden>
+        <div class="row">
+          <label>Business name <small>The business being written about. If you are an agency, your client.</small><input id="f-b0" maxlength="80"></label>
+          <label id="b6-wrap">Trade or kind of business<input id="f-b6" maxlength="60" placeholder="Plumber, roofer, landscaper"></label>
+        </div>
         <label><span id="b1-l">Services you want written about</span> <small>The more specific, the less generic the writing.</small><input id="f-b1" maxlength="400"></label>
         <label>What customers ask you most <small>Two or three questions. These become topics.</small><input id="f-b2" maxlength="400"></label>
         <label>What sets you apart <small>Only what is true: years in business, licensed, insured, guarantees, how you work.</small><input id="f-b3" maxlength="400"></label>
@@ -196,7 +200,7 @@ owner draw : 3,000 | 4</pre><p style="color:var(--dim);font-size:14px;margin:6px
     </form>
     <div class="done" id="done" hidden></div>
   </section>
-  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>Questions: <a href="mailto:hello@cordgrassstudio.com">hello@cordgrassstudio.com</a></div><div><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="markets.html">Markets</a> · <a href="partners.html">Partners</a> · <a href="for-agencies.html">Agencies</a> · <a href="order.html">Order</a></div></footer>
+  <footer><div><b>Cordgrass Studio</b> · Hilton Head Island, SC</div><div>Questions: <a href="mailto:hello@cordgrassstudio.com">hello@cordgrassstudio.com</a></div><div><a href="index.html">Home</a> · <a href="services.html">Services</a> · <a href="markets.html">Markets</a> · <a href="partners.html">Partners</a> · <a href="for-agencies.html">Agencies</a> · <a href="order.html">Order</a> · <a href="privacy.html">Privacy</a></div></footer>
 </div>
 <script>
 /* Order page switch. OPEN turns the form on. FORM_KEY is the Web3Forms access key that emails each order to the studio.
@@ -281,8 +285,8 @@ owner draw : 3,000 | 4</pre><p style="color:var(--dim);font-size:14px;margin:6px
       var a = el('a', 'Go to payment', 'btn'); a.href = payUrl(d.package, d.order_code); done.appendChild(a);
       return;
     }
-    done.appendChild(el('h2', 'One more step'));
-    done.appendChild(el('p', 'Copy the details below and email them to ' + MAIL + '.' + (FREE[d.package] ? '' : PAY[d.package] ? ' Then pay with the button underneath.' : ' A secure payment link will be emailed back to you.')));
+    done.appendChild(el('h2', 'That did not send'));
+    done.appendChild(el('p', 'Your order did not reach us, and nothing has been charged. Copy the details below and email them to ' + MAIL + '.' + (FREE[d.package] ? '' : ' A secure payment link will be emailed back once they arrive. Please do not pay before then.')));
     var pre = el('pre', summary(d), 'copy'); done.appendChild(pre);
     var cp = el('button', 'Copy details', 'btn'); cp.type = 'button';
     cp.addEventListener('click', function () {
@@ -291,7 +295,6 @@ owner draw : 3,000 | 4</pre><p style="color:var(--dim);font-size:14px;margin:6px
       try { navigator.clipboard.writeText(pre.textContent).then(ok, sel); } catch (e) { sel(); }
     });
     done.appendChild(cp);
-    if (!FREE[d.package] && PAY[d.package]) { var b = el('a', 'Go to payment', 'btn'); b.href = payUrl(d.package, d.order_code); done.appendChild(b); }
   }
   form.addEventListener('submit', function (ev) {
     ev.preventDefault(); err.hidden = true;
@@ -299,10 +302,13 @@ owner draw : 3,000 | 4</pre><p style="color:var(--dim);font-size:14px;margin:6px
     if (!document.getElementById('f-ok').checked) return fail('Please tick the box to confirm the facts are correct.');
     var d = { order_code: code(), package: pkg.value, name: val('f-name'), email: val('f-email'), property_type: val('f-type'), beds_baths: val('f-beds'),
       size: val('f-size'), mls_limit: val('f-limit'), requests: val('f-wish'), facts: val('f-facts') };
-    var gg = GROUP[pkg.value]; if (gg === 'trade' || gg === 'store') { var ex = [[gg === 'store' ? 'Products' : 'Services', 'f-b1'], ['Customers often ask', 'f-b2'], ['What sets us apart', 'f-b3'], [gg === 'store' ? 'Ships to' : 'Area served', 'f-b4'], ['Contact', 'f-b5']].filter(function (x) { return val(x[1]); }).map(function (x) { return x[0] + ': ' + val(x[1]); }).join('\n'); if (ex) d.facts = (ex + '\n' + d.facts).slice(0, 6000); }
+    var gg = GROUP[pkg.value]; if (gg === 'trade' || gg === 'store') { var ex = [['Business', 'f-b0'], [gg === 'store' ? 'Kind of store' : 'Trade', 'f-b6'], [gg === 'store' ? 'Products' : 'Services', 'f-b1'], ['Customers often ask', 'f-b2'], ['What sets us apart', 'f-b3'], [gg === 'store' ? 'Ships to' : 'Area served', 'f-b4'], ['Contact', 'f-b5']].filter(function (x) { return val(x[1]); }).map(function (x) { return x[0] + ': ' + val(x[1]); }).join('\n'); if (ex) d.facts = ex + '\n' + d.facts; }
+    var words = function (t) { var m = String(t || '').toLowerCase().match(/[a-z]{3,}/g) || [], u = {}; for (var i = 0; i < m.length; i++) u[m[i]] = 1; return Object.keys(u).length; };
+    if (gg === 'trade') { if (val('f-b0').length < 2 || words(val('f-b0')) < 1) return fail('Please enter the name of the business being written about.'); if (words(val('f-b6')) < 1) return fail('Please enter the trade or kind of business, for example plumber or roofer.'); if (words(val('f-b1')) < 2) return fail('Please list the services to write about. Two or three is enough.'); if (words(val('f-b4')) < 1) return fail('Please enter the town or area the business serves.'); }
+    if (d.facts.length > 5500) return fail('Your details come to ' + d.facts.length.toLocaleString('en-US') + ' characters and the limit is 5,500. Please shorten them. Nothing has been sent and nothing was cut.');
     if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.email)) return fail('Please enter the email address the description should be sent to.');
     if (gg === 'plan') { if (d.facts.trim() === PLANFORM.trim() || !/^[ \t]*business name[ \t]*:[ \t]*\S/im.test(d.facts) || !/^[ \t]*revenue[ \t]*:[ \t]*[^|\n]+\|[ \t]*\$?[\d,]+/im.test(d.facts)) return fail('Please fill in the questions first: at least the business name and one revenue line with your own numbers.'); }
-    if (d.facts.length < 30) return fail('Please add the facts about the property. A few lines is enough.');
+    if (d.facts.length < 30 || (gg !== 'plan' && words(d.facts) < 6)) return fail(gg === 'trade' || gg === 'store' ? 'Please add a few real details about the business. A few lines is enough.' : 'Please add the facts in words. A few lines is enough.');
     if ($('f-bot').checked) return;
     if (!FORM_KEY) return showDone('manual', d);
     go.disabled = true; go.textContent = 'Sending';
